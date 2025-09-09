@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Platformer physics</title>
+    <link rel="stylesheet" type="text/css" href="css/render.css">
+    <script src="js/platformer.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/save.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        
+
+        <canvas id="renderer"></canvas>
+
+    </div>
+    <script>
+        const game = new Game();
+        const editor = new LevelEditor(game);
+        game.run();
+    </script>
+
+
+</body>
+</head>
