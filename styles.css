@@ -53,3 +53,10 @@ body {
     -webkit-transform: scale(1.05);  
     -ms-transform: scale(1.05);   
 }
+
+/* GAME */ 
+
+#pause-menu {
+    opacity: 0;
+}
+
