@@ -1,0 +1,55 @@
+:root {
+    /* COLOR THEME */ 
+    --color-background: 230 100% 7.8%; /* black */
+    --color-start-button: 133, 64%, 90%; /* green */
+
+    /* BUTTONS */
+    --border-button: 1px;
+    --button-padding-height: 0.5rem;
+    --button-padding-width: 2rem;
+
+    /* TRANSITIONS */
+    --transition-time: 400ms;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    height: 95vh;
+    background-color: hsl(var(--color-background));
+}
+
+.button {
+    color: hsl(var(--color-start-button));
+    background-color: transparent;
+    border: hsl(var(--color-start-button)) solid var(--border-button);
+    border-radius: 30px;
+
+    padding-left: var(--button-padding-width);
+    padding-right: var(--button-padding-width);
+    padding-bottom: var(--button-padding-height);
+    padding-top: var(--button-padding-height);
+
+    font-family: "Story Script", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: x-large;
+
+    transition:
+        transform var(--transition-time) ease-in-out,
+        background-color var(--transition-time) ease-in-out, 
+        color var(--transition-time) ease-in-out;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: hsl(var(--color-background));
+    background-color: hsl(var(--color-start-button));
+    transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -moz-transform: scale(1.05);  
+    -webkit-transform: scale(1.05);  
+    -ms-transform: scale(1.05);   
+}
