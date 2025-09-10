@@ -3,6 +3,7 @@ import { fadeOutMusic } from "./audio.mjs";
 import { startAudio } from "./audio.mjs";
 import { introAudio } from "./audio.mjs";
 import { boom } from "./audio.mjs";
+import { playMusic } from "./audio.mjs";
 
 ////////////////
 // START MENU //
@@ -43,9 +44,21 @@ function startGame() {
     setTimeout(() => {
         let introTime = intro(); // stores time in ms and launches the intro
         let totalBeforeTime = introTime + animationTime; // time in ms
-            setTimeout(() => {
-                window.location.href = "index.html";
-            }, totalBeforeTime);
+        setTimeout(() => {
+            fadeOutMusic(introAudio);
+            boom.play()
+                .then(() => {
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 2000);
+                })
+                .catch((error) => {
+                    console.log(`Music failed: ${error}`);
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 2000);
+                });
+        }, totalBeforeTime);
     }, animationTime);
 }
 
@@ -56,6 +69,7 @@ function buttonAnimation() {
     startButton.style.opacity = "0";
     startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime/2}ms`;
     fadeOutMusic(startAudio);
+    fadeInMusic(introAudio);
     // setTimeout(() => {
     //     intro();
     // }, transitionTime);
@@ -65,6 +79,7 @@ function buttonAnimation() {
 // function that start the intro 
 // output : time of the intro in ms
 function intro() {
+    fadeInMusic(introAudio);
     // create an #intro div 
     let intro = document.createElement('div');
     intro.id = "intro";
@@ -95,7 +110,6 @@ function intro() {
         }, totalDelay);
         totalDelay += displayTime + 1000;
     });
-
 
     return totalDelay;
 }
