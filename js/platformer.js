@@ -346,7 +346,7 @@ setCeiling(x, y, value) {
       }
 
       if(cell.ceiling[inactiveDimension]) {
-        context.strokeStyle = "blued";
+        context.strokeStyle = "bluedz";
         context.globalAlpha = 0.3;
         context.lineWidth = this.EDGE_LINE_WIDTH;
 
