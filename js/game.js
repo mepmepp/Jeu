@@ -1,6 +1,4 @@
 function Game() {
-  var canvas = this.getCanvas();
-
   this.mouseX = this.mouseY = 0;
   this.gridX = this.gridY = -1;
   this.gridWall = true;
@@ -9,27 +7,40 @@ function Game() {
   this.leftDown = false;
   this.rightDown = false;
 
-  // Create a grid with a floor over its entire width
-  this.grid = new PlatformerGrid(
-    Math.floor(canvas.width / this.GRID_RESOLUTION),
-    Math.floor(canvas.height / this.GRID_RESOLUTION),
-    this.GRID_RESOLUTION);
+  // Nombre fixe de cases
+  this.COLUMNS = 40;
+  this.ROWS = 20;
 
-  for(var x = 0; x < this.grid.width; ++x)
+  // Récupère le canvas et calcule GRID_RESOLUTION
+  var canvas = this.getCanvas();
+
+   this.PLAYER_JUMP_SPEED = Game.prototype.PLAYER_JUMP_SPEED * (this.GRID_RESOLUTION / 32);
+  this.PLAYER_WALK_SPEED = Game.prototype.PLAYER_WALK_SPEED * (this.GRID_RESOLUTION / 32);
+  this.PLAYER_WALK_ACCELERATION = Game.prototype.PLAYER_WALK_ACCELERATION * (this.GRID_RESOLUTION / 32);
+
+  // Crée la grille avec le nombre fixe de cases
+  this.grid = new PlatformerGrid(
+    this.COLUMNS,
+    this.ROWS,
+    this.GRID_RESOLUTION
+  );
+
+  // Crée le sol
+  for (var x = 0; x < this.grid.width; ++x)
     this.grid.setCeiling(x, this.grid.height - 1, true);
 
-  // Create a player
+  // Crée le joueur
   this.player = new PlatformerNode(
     this.PLAYER_SPAWN_X,
     this.PLAYER_SPAWN_Y,
     this.PLAYER_SIZE,
-    this.PLAYER_SIZE);
+    this.PLAYER_SIZE
+  );
   this.grid.addNode(this.player);
 
   this.addListeners();
+}
 
-  
-};
 
 
 
@@ -68,8 +79,16 @@ Game.prototype = {
   const canvas = document.getElementById("renderer");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
+  // Taille d'une case pour que le nombre de cases soit fixe
+  this.GRID_RESOLUTION = Math.min(
+    canvas.width / this.COLUMNS,
+    canvas.height / this.ROWS
+  );
+
   return canvas;
 },
+
 
 
 
