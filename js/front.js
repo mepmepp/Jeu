@@ -2,6 +2,15 @@
 const startButton = document.getElementById("start-button");
 const body = document.body;
 
+window.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+        startButton.classList.add("button-hover");
+        startGame();
+        setTimeout(() => {
+            startButton.classList.remove("button-hover");
+        }, buttonAnimation());
+    }
+});
 
 function startGame(){
     let animationTime = buttonAnimation(); // time in ms

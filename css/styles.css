@@ -43,7 +43,8 @@ body {
         color var(--transition-time) ease-in-out;
 }
 
-.button:hover {
+.button:hover,
+.button-hover {
     cursor: pointer;
     color: hsl(var(--color-background));
     background-color: hsl(var(--color-start-button));
