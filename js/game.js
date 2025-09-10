@@ -6,37 +6,45 @@ function Game() {
   this.jumpDown = false;
   this.leftDown = false;
   this.rightDown = false;
-
-  // Nombre fixe de cases
+  this.jsonPlayerSpawn = { x: this.PLAYER_SPAWN_X, y: this.PLAYER_SPAWN_Y };
+  
   this.COLUMNS = 40;
   this.ROWS = 20;
+  this.coyoteTime = 0;      
+  this.COYOTE_TIME_MAX = 0.3; 
 
-  // Récupère le canvas et calcule GRID_RESOLUTION
+
+  
   var canvas = this.getCanvas();
+  this.getCanvas();
 
-   this.PLAYER_JUMP_SPEED = Game.prototype.PLAYER_JUMP_SPEED * (this.GRID_RESOLUTION / 32);
+  this.PLAYER_JUMP_SPEED = Game.prototype.PLAYER_JUMP_SPEED * (this.GRID_RESOLUTION / 32);
   this.PLAYER_WALK_SPEED = Game.prototype.PLAYER_WALK_SPEED * (this.GRID_RESOLUTION / 32);
   this.PLAYER_WALK_ACCELERATION = Game.prototype.PLAYER_WALK_ACCELERATION * (this.GRID_RESOLUTION / 32);
 
-  // Crée la grille avec le nombre fixe de cases
+  
   this.grid = new PlatformerGrid(
     this.COLUMNS,
     this.ROWS,
     this.GRID_RESOLUTION
   );
 
-  // Crée le sol
+  
   for (var x = 0; x < this.grid.width; ++x)
     this.grid.setCeiling(x, this.grid.height - 1, true);
 
-  // Crée le joueur
-  this.player = new PlatformerNode(
-    this.PLAYER_SPAWN_X,
-    this.PLAYER_SPAWN_Y,
-    this.PLAYER_SIZE,
-    this.PLAYER_SIZE
-  );
-  this.grid.addNode(this.player);
+  
+  
+this.jsonPlayerSpawn = { x: this.PLAYER_SPAWN_X, y: this.PLAYER_SPAWN_Y };
+
+this.player = new PlatformerNode(
+  this.jsonPlayerSpawn.x,
+  this.jsonPlayerSpawn.y,
+  this.PLAYER_SIZE,
+  this.PLAYER_SIZE
+);
+this.grid.addNode(this.player);
+
 
   this.addListeners();
 }
@@ -67,80 +75,92 @@ Game.prototype = {
     window.addEventListener("keydown", this.keyDown.bind(this));
     window.addEventListener("keyup", this.keyUp.bind(this));
     window.addEventListener("resize", () => {
-  const canvas = document.getElementById("renderer");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
+      const canvas = document.getElementById("renderer");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
 
   },
-  
+
 
   getCanvas() {
-  const canvas = document.getElementById("renderer");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+    const canvas = document.getElementById("renderer");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-  // Taille d'une case pour que le nombre de cases soit fixe
-  this.GRID_RESOLUTION = Math.min(
-    canvas.width / this.COLUMNS,
-    canvas.height / this.ROWS
-  );
+    
+    this.GRID_RESOLUTION = Math.min(
+      canvas.width / this.COLUMNS,
+      canvas.height / this.ROWS
+    );
 
-  return canvas;
-},
+    return canvas;
+  },
 
 
 
 
   run() {
-    this.lastTime = new Date();
-
+    this.lastTime = performance.now();
     window.requestAnimationFrame(this.animate.bind(this));
   },
 
-  keyDown(e) {
-  switch(e.code) {
-    case this.controls.jump:
-      if(!this.jumpDown && this.player.onGround) {
-        this.jumpDown = true;
-        this.player.setvy(this.PLAYER_JUMP_SPEED);
-      }
-      break;
-    case this.controls.right:
-      this.rightDown = true;
-      break;
-    case this.controls.left:
-      this.leftDown = true;
-      break;
-      case "Space":
-  this.toggleDimension();
-  break;
 
-  }
-},
+  keyDown(e) {
+    switch (e.code) {
+      case this.controls.jump:
+        if (!this.jumpDown && (this.player.onGround || this.coyoteTime > 0)) {
+          this.jumpDown = true;
+          this.player.setvy(this.PLAYER_JUMP_SPEED);
+          this.coyoteTime = 0;
+        }
+        break;
+      case this.controls.right:
+        this.rightDown = true;
+        break;
+      case this.controls.left:
+        this.leftDown = true;
+        break;
+      case "Space":
+        this.toggleDimension();
+        break;
+      case "KeyG": 
+        if (this.gridX != -1 && this.gridY != -1) {
+          const cell = this.grid.getCell(this.gridX, this.gridY);
+          if (cell.goal) {
+            this.grid.setGoal(this.gridX, this.gridY, false); 
+          } else {
+            this.grid.setGoal(this.gridX, this.gridY, true); 
+          }
+        }
+        break;
+    }
+  },
+
+
 
 
   keyUp(e) {
-  switch(e.code) {
-    case this.controls.jump:
-      this.jumpDown = false;
-      break;
-    case this.controls.right:
-      this.rightDown = false;
-      break;
-    case this.controls.left:
-      this.leftDown = false;
-      break;
-  }
-},
+    switch (e.code) {
+      case this.controls.jump:
+        this.jumpDown = false;
+        break;
+      case this.controls.right:
+        this.rightDown = false;
+        break;
+      case this.controls.left:
+        this.leftDown = false;
+        break;
+    }
+  },
 
 
   mouseClick(e) {
-    if(this.gridX == -1 || this.gridY == -1)
+    if (this.gridX == -1 || this.gridY == -1)
       return;
 
-    // Toggle selected edge
-    if(this.gridWall)
+    
+    if (this.gridWall)
       this.grid.setWall(this.gridX, this.gridY, !this.grid.getWall(this.gridX, this.gridY));
     else
       this.grid.setCeiling(this.gridX, this.gridY, !this.grid.getCeiling(this.gridX, this.gridY));
@@ -162,8 +182,8 @@ Game.prototype = {
     const deltaY = this.mouseY - this.gridY * this.GRID_RESOLUTION;
     this.gridWall = deltaX * deltaX < deltaY * deltaY;
 
-    if(deltaX + deltaY > this.GRID_RESOLUTION) {
-      if(deltaX > deltaY) {
+    if (deltaX + deltaY > this.GRID_RESOLUTION) {
+      if (deltaX > deltaY) {
         this.gridX = Math.min(this.gridX + 1, this.grid.width);
       }
       else {
@@ -179,12 +199,10 @@ Game.prototype = {
   },
 
   animate() {
-    var time = new Date();
-    var timeStep = (time.getMilliseconds() - this.lastTime.getMilliseconds()) / 1000;
-    if(timeStep < 0)
-      timeStep += 1;
-
-    this.lastTime = time;
+    const now = performance.now();
+    let timeStep = (now - this.lastTime) / 1000; 
+    if (timeStep > 0.1) timeStep = 0.1; 
+    this.lastTime = now;
 
     this.movePlayer(timeStep);
     this.grid.update(timeStep);
@@ -193,30 +211,60 @@ Game.prototype = {
     window.requestAnimationFrame(this.animate.bind(this));
   },
 
+
   movePlayer(timeStep) {
-    if(this.rightDown) {
+    if (this.rightDown) {
       this.player.setvx(Math.min(this.player.vx + this.PLAYER_WALK_ACCELERATION * timeStep, this.PLAYER_WALK_SPEED));
     }
 
-    if(this.leftDown) {
+    if (this.leftDown) {
       this.player.setvx(Math.max(this.player.vx - this.PLAYER_WALK_ACCELERATION * timeStep, -this.PLAYER_WALK_SPEED));
     }
 
-    if(
-      this.player.x < -this.player.width ||
-      this.player.y < -this.player.height ||
-      this.player.x > this.getCanvas().width ||
-      this.player.y > this.getCanvas().height) {
-      this.player.x = this.PLAYER_SPAWN_X;
-      this.player.y = this.PLAYER_SPAWN_Y;
+    if (
+  this.player.x < -this.player.width ||
+  this.player.y < -this.player.height ||
+  this.player.x > this.getCanvas().width ||
+  this.player.y > this.getCanvas().height
+) {
+  if (this.jsonPlayerSpawn) {
+    this.player.x = this.jsonPlayerSpawn.x;
+    this.player.y = this.jsonPlayerSpawn.y;
+  } else {
+    this.player.x = this.PLAYER_SPAWN_X;
+    this.player.y = this.PLAYER_SPAWN_Y;
+  }
+  this.player.vx = 0;
+  this.player.vy = 0;
+  this.player.onGround = false;
+}
+
+    if (!this.leftDown && !this.rightDown) {
+      const friction = 1000 * (this.GRID_RESOLUTION / 32) * timeStep;
+
+      if (this.player.vx > 0) {
+        this.player.vx = Math.max(0, this.player.vx - friction);
+      } else if (this.player.vx < 0) {
+        this.player.vx = Math.min(0, this.player.vx + friction);
+      }
     }
+    
+    if (this.coyoteTime > 0) {
+      this.coyoteTime -= timeStep;
+    }
+
+    
+    if (this.player.onGround) {
+      this.coyoteTime = this.COYOTE_TIME_MAX;
+    }
+
   },
 
   render(timeStep) {
     var canvas = this.getCanvas();
     var context = canvas.getContext("2d");
 
-    // Clear canvas
+    
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.fillStyle = "white";
     context.beginPath();
@@ -225,13 +273,13 @@ Game.prototype = {
 
     this.grid.draw(context);
 
-    // Draw selected edge
-    if(this.gridX != -1 && this.gridY != -1) {
+    
+    if (this.gridX != -1 && this.gridY != -1) {
       context.beginPath();
       context.lineWidth = PlatformerGrid.prototype.EDGE_LINE_WIDTH;
 
-      if(this.gridWall) {
-        if(this.grid.getWall(this.gridX, this.gridY))
+      if (this.gridWall) {
+        if (this.grid.getWall(this.gridX, this.gridY))
           context.strokeStyle = this.ERASE_STROKE_STYLE;
         else
           context.strokeStyle = this.PAINT_STROKE_STYLE;
@@ -240,7 +288,7 @@ Game.prototype = {
         context.lineTo(this.gridX * this.GRID_RESOLUTION, (this.gridY + 1) * this.GRID_RESOLUTION);
       }
       else {
-        if(this.grid.getCeiling(this.gridX, this.gridY))
+        if (this.grid.getCeiling(this.gridX, this.gridY))
           context.strokeStyle = this.ERASE_STROKE_STYLE;
         else
           context.strokeStyle = this.PAINT_STROKE_STYLE;
@@ -253,19 +301,19 @@ Game.prototype = {
     }
   },
   setControl(action, newKeyCode) {
-  if(this.controls[action] !== undefined) {
-    this.controls[action] = newKeyCode;
-  }
-  
+    if (this.controls[action] !== undefined) {
+      this.controls[action] = newKeyCode;
+    }
 
-}
+
+  }
 
 };
-Game.prototype.toggleDimension = function() {
-  this.grid.dimension = 1 - this.grid.dimension; // change la dimension
+Game.prototype.toggleDimension = function () {
+  this.grid.dimension = 1 - this.grid.dimension; 
 
-  // Vérifie immédiatement si le joueur est toujours sur le sol
-  this.player.onGround = false;  // reset onGround
-  this.grid.update(0);            // timeStep = 0 pour juste recalculer collisions
+  
+  this.player.onGround = false;  
+  this.grid.update(0);            
 };
 

@@ -1,0 +1,9482 @@
+{
+  "width": 41,
+  "height": 21,
+  "resolution": 40,
+  "cells": [
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": true
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        false,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    },
+    {
+      "wall": [
+        false,
+        false
+      ],
+      "ceiling": [
+        true,
+        false
+      ],
+      "goal": false
+    }
+  ],
+  "playerSpawn": {
+    "x": 10.817879062513375,
+    "y": 19.4
+  }
+}

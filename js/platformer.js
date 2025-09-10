@@ -1,9 +1,10 @@
 function PlatformerGridCell() {
-  // Par défaut, 2 dimensions : 0 et 1
+  
   this.wall = [false, false];
   this.ceiling = [false, false];
+  this.goal = false;
 }
-// Platformer node, a dynamic object in the grid
+
 function PlatformerNode(x, y, width, height) {
   this.x = x;
   this.y = y;
@@ -22,7 +23,7 @@ PlatformerNode.prototype = {
   setvy(vy) {
     this.vy = vy;
 
-    if(vy != 0)
+    if (vy != 0)
       this.onGround = false;
   },
 
@@ -41,7 +42,7 @@ PlatformerNode.prototype = {
   },
 
   getCellBottom(y, resolution) {
-     return Math.floor((y + this.height - PlatformerGrid.prototype.EPSILON) / resolution);
+    return Math.floor((y + this.height - PlatformerGrid.prototype.EPSILON) / resolution);
   },
 
   getCellTop(y, resolution) {
@@ -78,30 +79,31 @@ PlatformerNode.prototype = {
   },
 
   limitXSpeed(timeStep) {
-    if(this.vx * timeStep < -this.width + PlatformerGrid.prototype.EPSILON)
+    if (this.vx * timeStep < -this.width + PlatformerGrid.prototype.EPSILON)
       this.vx = (-this.width + PlatformerGrid.prototype.EPSILON) / timeStep;
 
-    if(this.vx * timeStep > this.width - PlatformerGrid.prototype.EPSILON)
+    if (this.vx * timeStep > this.width - PlatformerGrid.prototype.EPSILON)
       this.vx = (this.width - PlatformerGrid.prototype.EPSILON) / timeStep;
   },
 
   limitYSpeed(timeStep) {
-    if(this.vy * timeStep < -this.height + PlatformerGrid.prototype.EPSILON)
+    if (this.vy * timeStep < -this.height + PlatformerGrid.prototype.EPSILON)
       this.vy = (-this.height + PlatformerGrid.prototype.EPSILON) / timeStep;
 
-    if(this.vy * timeStep > this.height - PlatformerGrid.prototype.EPSILON)
+    if (this.vy * timeStep > this.height - PlatformerGrid.prototype.EPSILON)
       this.vy = (this.height - PlatformerGrid.prototype.EPSILON) / timeStep;
   }
 };
 
-function PlatformerGrid(width, height, resolution, gravity = 2500, friction = 1700) {
+function PlatformerGrid(width, height, resolution, gravity = 2500, friction = 800) {
   this.width = width + 1;
   this.height = height + 1;
   this.resolution = resolution;
-  this.gravity = gravity;
-  this.friction = friction;
+  this.gravity = gravity * (this.resolution / 32);
+this.friction = friction * (this.resolution / 32);
+
   this.nodes = [];
-  this.dimension = 0; // dimension active : 0 ou 1
+  this.dimension = 0; 
   this.cells = [];
 
   for (var i = 0; i < this.width * this.height; ++i)
@@ -117,7 +119,7 @@ PlatformerGrid.prototype = {
   EPSILON: 0.0000001,
 
   validateCoordinates(x, y) {
-    if(x < 0 || y < 0 || x >= this.width || y >= this.height)
+    if (x < 0 || y < 0 || x >= this.width || y >= this.height)
       return false;
 
     return true;
@@ -128,28 +130,38 @@ PlatformerGrid.prototype = {
   },
 
   getWall(x, y) {
-  if(!this.validateCoordinates(x, y))
-    return false;
+    if (!this.validateCoordinates(x, y))
+      return false;
 
-  return this.getCell(x, y).wall[this.dimension];
-},
+    return this.getCell(x, y).wall[this.dimension];
+  },
 
-getCeiling(x, y) {
-  if(!this.validateCoordinates(x, y))
-    return false;
+  getCeiling(x, y) {
+    if (!this.validateCoordinates(x, y))
+      return false;
 
-  return this.getCell(x, y).ceiling[this.dimension];
-},
+    return this.getCell(x, y).ceiling[this.dimension];
+  },
 
-setWall(x, y, value) {
-  if(this.validateCoordinates(x, y))
-    this.getCell(x, y).wall[this.dimension] = value;
-},
+  setWall(x, y, value) {
+    if (this.validateCoordinates(x, y))
+      this.getCell(x, y).wall[this.dimension] = value;
+  },
 
-setCeiling(x, y, value) {
-  if(this.validateCoordinates(x, y))
-    this.getCell(x, y).ceiling[this.dimension] = value;
-},
+  setCeiling(x, y, value) {
+    if (this.validateCoordinates(x, y))
+      this.getCell(x, y).ceiling[this.dimension] = value;
+  },
+  getGoal(x, y) {
+    if (!this.validateCoordinates(x, y)) return false;
+    return this.getCell(x, y).goal;
+  },
+
+  setGoal(x, y, value) {
+    if (this.validateCoordinates(x, y)) {
+      this.getCell(x, y).goal = value;
+    }
+  },
 
 
   addNode(node) {
@@ -159,29 +171,37 @@ setCeiling(x, y, value) {
   removeNode(node) {
     const nodeIndex = this.nodes.indexOf(node);
 
-    if(nodeIndex != -1)
+    if (nodeIndex != -1)
       this.nodes.splice(nodeIndex, 1);
   },
 
   update(timeStep) {
-    for(var i = 0; i < this.nodes.length; ++i) {
+    const player = this.nodes[0]; 
+    const goalX = Math.floor((player.x + player.width / 2) / this.resolution);
+    const goalY = Math.floor((player.y + player.height / 2) / this.resolution);
+
+    if (this.getGoal(goalX, goalY)) {
+      alert("🎉 Bravo, tu as atteint l’arrivée !");
+
+    }
+    for (var i = 0; i < this.nodes.length; ++i) {
       const node = this.nodes[i];
 
-      // Move horizontally
-      if(node.vx != 0) {
+      
+      if (node.vx != 0) {
         node.limitXSpeed(timeStep);
 
         var vx = node.vx * timeStep;
         node.xp = node.x;
         node.x += vx;
 
-        // Collide horizontally
-        if(node.vx > 0) {
-          if(node.getCellRight(node.x, this.resolution) != node.getCellRight(node.xp, this.resolution)) {
+        
+        if (node.vx > 0) {
+          if (node.getCellRight(node.x, this.resolution) != node.getCellRight(node.xp, this.resolution)) {
             const yCells = node.getYCells(this.resolution);
 
-            for(var y = yCells.start; y <= yCells.end; ++y) {
-              if(this.getWall(node.getCellRight(node.x, this.resolution), y) ||
+            for (var y = yCells.start; y <= yCells.end; ++y) {
+              if (this.getWall(node.getCellRight(node.x, this.resolution), y) ||
                 (y != yCells.start && this.getCeiling(node.getCellRight(node.x, this.resolution), y))) {
                 node.collideCellRight(this.resolution);
 
@@ -191,11 +211,11 @@ setCeiling(x, y, value) {
           }
         }
         else {
-          if(node.getCellLeft(node.x, this.resolution) != node.getCellLeft(node.xp, this.resolution)) {
+          if (node.getCellLeft(node.x, this.resolution) != node.getCellLeft(node.xp, this.resolution)) {
             const yCells = node.getYCells(this.resolution);
 
-            for(var y = yCells.start; y<= yCells.end; ++y) {
-              if(this.getWall(node.getCellLeft(node.xp, this.resolution), y) ||
+            for (var y = yCells.start; y <= yCells.end; ++y) {
+              if (this.getWall(node.getCellLeft(node.xp, this.resolution), y) ||
                 (y != yCells.start && this.getCeiling(node.getCellLeft(node.x, this.resolution), y))) {
                 node.collideCellLeft(this.resolution);
 
@@ -205,14 +225,14 @@ setCeiling(x, y, value) {
           }
         }
 
-        // Check if node is still on ground
-        if(node.onGround) {
+        
+        if (node.onGround) {
           const xCells = node.getXCells(this.resolution);
 
-          for(var x = xCells.start; x <= xCells.end; ++x) {
+          for (var x = xCells.start; x <= xCells.end; ++x) {
             node.onGround = false;
 
-            if(this.getCeiling(x, node.getCellBottom(node.y, this.resolution) + 1) ||
+            if (this.getCeiling(x, node.getCellBottom(node.y, this.resolution) + 1) ||
               (x != xCells.start && this.getWall(x, node.getCellBottom(node.y, this.resolution) + 1))) {
               node.onGround = true;
 
@@ -221,43 +241,43 @@ setCeiling(x, y, value) {
           }
         }
 
-        // Apply friction if on ground
-        if(node.onGround) {
-          if(node.vx > 0) {
+        
+        if (node.onGround) {
+          if (node.vx > 0) {
             node.vx -= this.friction * timeStep;
 
-            if(node.vx < 0)
+            if (node.vx < 0)
               node.vx = 0;
           }
-          else if(node.vx < 0) {
+          else if (node.vx < 0) {
             node.vx += this.friction * timeStep;
 
-            if(node.vx > 0)
+            if (node.vx > 0)
               node.vx = 0;
           }
         }
       }
 
-      // Add gravity
-      if(!node.onGround) {
+      
+      if (!node.onGround) {
         node.vy += this.gravity * timeStep;
       }
 
-      // Mover vertically
-      if(node.vy != 0) {
+      
+      if (node.vy != 0) {
         node.limitYSpeed(timeStep);
 
         var vy = node.vy * timeStep;
         node.yp = node.y;
         node.y += vy;
 
-        // Collide vertically
-        if(node.vy > 0) {
-          if(node.getCellBottom(node.y, this.resolution) != node.getCellBottom(node.yp, this.resolution)) {
+        
+        if (node.vy > 0) {
+          if (node.getCellBottom(node.y, this.resolution) != node.getCellBottom(node.yp, this.resolution)) {
             const xCells = node.getXCells(this.resolution);
 
-            for(var x = xCells.start; x <= xCells.end; ++x) {
-              if(this.getCeiling(x, node.getCellBottom(node.y, this.resolution)) ||
+            for (var x = xCells.start; x <= xCells.end; ++x) {
+              if (this.getCeiling(x, node.getCellBottom(node.y, this.resolution)) ||
                 (x != xCells.start && this.getWall(x, node.getCellBottom(node.y, this.resolution)))) {
                 node.collideCellBottom(this.resolution);
 
@@ -267,11 +287,11 @@ setCeiling(x, y, value) {
           }
         }
         else {
-          if(node.getCellTop(node.y, this.resolution) != node.getCellTop(node.yp, this.resolution)) {
+          if (node.getCellTop(node.y, this.resolution) != node.getCellTop(node.yp, this.resolution)) {
             const xCells = node.getXCells(this.resolution);
 
-            for(var x = xCells.start; x <= xCells.end; ++x) {
-              if(this.getCeiling(x, node.getCellTop(node.yp, this.resolution)) ||
+            for (var x = xCells.start; x <= xCells.end; ++x) {
+              if (this.getCeiling(x, node.getCellTop(node.yp, this.resolution)) ||
                 (x != xCells.start && this.getWall(x, node.getCellTop(node.y, this.resolution)))) {
                 node.collideCellTop(this.resolution);
 
@@ -288,14 +308,14 @@ setCeiling(x, y, value) {
     context.strokeStyle = this.GRID_STROKE_STYLE;
     context.lineWidth = this.GRID_LINE_WIDTH;
 
-    for(var y = 0; y < this.height; ++y) {
+    for (var y = 0; y < this.height; ++y) {
       context.beginPath();
       context.moveTo(0, y * this.resolution);
       context.lineTo(this.width * this.resolution, y * this.resolution);
       context.stroke();
     }
 
-    for(var x = 0; x < this.width; ++x) {
+    for (var x = 0; x < this.width; ++x) {
       context.beginPath();
       context.moveTo(x * this.resolution, 0);
       context.lineTo(x * this.resolution, this.height * this.resolution);
@@ -304,68 +324,85 @@ setCeiling(x, y, value) {
   },
 
   drawWalls(context) {
-  for (var x = 0; x < this.width; ++x) {
-    for (var y = 0; y < this.height; ++y) {
-      var cell = this.getCell(x, y);
+    for (var x = 0; x < this.width; ++x) {
+      for (var y = 0; y < this.height; ++y) {
+        var cell = this.getCell(x, y);
 
-      // Dimension active
-      if(cell.wall[this.dimension]) {
-        context.strokeStyle = this.EDGE_STROKE_STYLE;
-        context.globalAlpha = 1;  // pleine visibilité
-        context.lineWidth = this.EDGE_LINE_WIDTH;
+        
+        if (cell.wall[this.dimension]) {
+          context.strokeStyle = this.EDGE_STROKE_STYLE;
+          context.globalAlpha = 1;  
+          context.lineWidth = this.EDGE_LINE_WIDTH;
 
-        context.beginPath();
-        context.moveTo(x * this.resolution, (y + 1) * this.resolution);
-        context.lineTo(x * this.resolution, y * this.resolution);
-        context.stroke();
-      }
+          context.beginPath();
+          context.moveTo(x * this.resolution, (y + 1) * this.resolution);
+          context.lineTo(x * this.resolution, y * this.resolution);
+          context.stroke();
+        }
 
-      if(cell.ceiling[this.dimension]) {
-        context.strokeStyle = this.EDGE_STROKE_STYLE;
-        context.globalAlpha = 1;
-        context.lineWidth = this.EDGE_LINE_WIDTH;
+        if (cell.ceiling[this.dimension]) {
+          context.strokeStyle = this.EDGE_STROKE_STYLE;
+          context.globalAlpha = 1;
+          context.lineWidth = this.EDGE_LINE_WIDTH;
 
-        context.beginPath();
-        context.moveTo((x + 1) * this.resolution, y * this.resolution);
-        context.lineTo(x * this.resolution, y * this.resolution);
-        context.stroke();
-      }
+          context.beginPath();
+          context.moveTo((x + 1) * this.resolution, y * this.resolution);
+          context.lineTo(x * this.resolution, y * this.resolution);
+          context.stroke();
+        }
 
-      // Dimension inactive (légèrement visible)
-      var inactiveDimension = 1 - this.dimension;
+        if (cell.goal) {
+  const margin = this.resolution * 0.05; 
+  const size = this.resolution - margin * 2;
 
-      if(cell.wall[inactiveDimension]) {
-        context.strokeStyle = "blue";   // ou autre couleur discrète
-        context.globalAlpha = 0.3;      // opacité réduite
-        context.lineWidth = this.EDGE_LINE_WIDTH;
-
-        context.beginPath();
-        context.moveTo(x * this.resolution, (y + 1) * this.resolution);
-        context.lineTo(x * this.resolution, y * this.resolution);
-        context.stroke();
-      }
-
-      if(cell.ceiling[inactiveDimension]) {
-        context.strokeStyle = "blue";
-        context.globalAlpha = 0.3;
-        context.lineWidth = this.EDGE_LINE_WIDTH;
-
-        context.beginPath();
-        context.moveTo((x + 1) * this.resolution, y * this.resolution);
-        context.lineTo(x * this.resolution, y * this.resolution);
-        context.stroke();
-      }
-
-      context.globalAlpha = 1; // reset alpha après chaque cellule
-    }
-  }
-
-
+  context.fillStyle = "gold";
+  context.globalAlpha = 0.8;
+  context.fillRect(
+    x * this.resolution + margin,
+    y * this.resolution + margin,
+    size,
+    size
+  );
+  context.globalAlpha = 1;
 }
+
+
+
+        
+        var inactiveDimension = 1 - this.dimension;
+
+        if (cell.wall[inactiveDimension]) {
+          context.strokeStyle = "blue";   
+          context.globalAlpha = 0.3;      
+          context.lineWidth = this.EDGE_LINE_WIDTH;
+
+          context.beginPath();
+          context.moveTo(x * this.resolution, (y + 1) * this.resolution);
+          context.lineTo(x * this.resolution, y * this.resolution);
+          context.stroke();
+        }
+
+        if (cell.ceiling[inactiveDimension]) {
+          context.strokeStyle = "blue";
+          context.globalAlpha = 0.3;
+          context.lineWidth = this.EDGE_LINE_WIDTH;
+
+          context.beginPath();
+          context.moveTo((x + 1) * this.resolution, y * this.resolution);
+          context.lineTo(x * this.resolution, y * this.resolution);
+          context.stroke();
+        }
+
+        context.globalAlpha = 1; 
+      }
+    }
+
+
+  }
   ,
 
   drawNodes(context) {
-    for(var i = 0; i < this.nodes.length; ++i) {
+    for (var i = 0; i < this.nodes.length; ++i) {
       const node = this.nodes[i];
 
       context.fillStyle = this.PLAYER_FILL_STYLE;

@@ -1,3 +1,4 @@
+
 class LevelEditor {
   constructor(game) {
     this.game = game;
@@ -5,17 +6,28 @@ class LevelEditor {
 
   
   saveLayout() {
-  const layout = {
-    width: this.game.grid.width,
-    height: this.game.grid.height,
-    resolution: this.game.grid.resolution,
-    cells: this.game.grid.cells.map(cell => ({
-      wall: cell.wall,       // tableau de 2 dimensions
-      ceiling: cell.ceiling  // tableau de 2 dimensions
-    }))
-  };
-  return JSON.stringify(layout, null, 2);
-}
+    const layout = {
+      width: this.game.grid.width,
+      height: this.game.grid.height,
+      resolution: this.game.grid.resolution,
+      cells: this.game.grid.cells.map(cell => {
+        const cellData = {};
+        for (const key in cell) {
+          if (cell.hasOwnProperty(key)) {
+            cellData[key] = cell[key]; 
+          }
+        }
+        return cellData;
+      }),
+      
+      playerSpawn: {
+        x: this.game.player.x / this.game.grid.resolution,
+        y: this.game.player.y / this.game.grid.resolution
+      }
+      
+    };
+    return JSON.stringify(layout, null, 2);
+  }
 
   
   loadLayout(json) {
@@ -23,32 +35,46 @@ class LevelEditor {
       const layout = JSON.parse(json);
 
       
-      if (layout.width !== this.game.grid.width ||
-    layout.height !== this.game.grid.height ||
-    layout.resolution !== this.game.grid.resolution) {
-  console.warn("⚠️ Taille de grille différente, recréation forcée !");
-  
-  
-  this.game.grid = new PlatformerGrid(
-    layout.width,
-    layout.height,
-    layout.resolution
-  );
-
-  
-  this.game.grid.addNode(this.game.player);
-}
-
+      if (
+        layout.width !== this.game.grid.width ||
+        layout.height !== this.game.grid.height ||
+        layout.resolution !== this.game.grid.resolution
+      ) {
+        console.warn("⚠️ Taille de grille différente, recréation forcée !");
+        this.game.grid = new PlatformerGrid(
+          layout.width,
+          layout.height,
+          layout.resolution
+        );
+        this.game.grid.addNode(this.game.player);
+      }
 
       
       for (let i = 0; i < layout.cells.length; i++) {
-        this.game.grid.cells[i].wall = layout.cells[i].wall;
-        this.game.grid.cells[i].ceiling = layout.cells[i].ceiling;
+        const cell = layout.cells[i];
+        for (const key in cell) {
+          if (cell.hasOwnProperty(key)) {
+            this.game.grid.cells[i][key] = cell[key];
+          }
+        }
+      }
+
+      
+      if (layout.playerSpawn) {
+        this.game.player.x = layout.playerSpawn.x * this.game.grid.resolution;
+        this.game.player.y = layout.playerSpawn.y * this.game.grid.resolution;
+        this.game.player.vx = 0;
+        this.game.player.vy = 0;
+        this.game.player.onGround = false;
+        this.game.jsonPlayerSpawn = {
+    x: layout.playerSpawn.x * this.game.grid.resolution,
+    y: layout.playerSpawn.y * this.game.grid.resolution
+  };
       }
 
       console.log("✅ Layout chargé !");
     } catch (e) {
-      console.error("Erreur lors du chargement du layout :", e);
+      console.error("Erreur lors du parsing du layout :", e);
     }
   }
 
