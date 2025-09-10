@@ -57,6 +57,18 @@ body {
 /* GAME */ 
 
 #pause-menu {
+    position: absolute;
     opacity: 0;
+    pointer-events: none;
+    z-index: 100;
 }
 
+.blur-effect {
+    filter: blur(5px);
+    pointer-events: none;
+    transition: filter var(--transition-time);
+}
+
+#renderer {
+    transition: filter var(--transition-time);
+}
