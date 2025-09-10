@@ -5,19 +5,17 @@ class LevelEditor {
 
   
   saveLayout() {
-    const layout = {
-      width: this.game.grid.width,
-      height: this.game.grid.height,
-      resolution: this.game.grid.resolution,
-      cells: this.game.grid.cells.map(cell => ({
-        wall: cell.wall,
-        ceiling: cell.ceiling
-      }))
-    };
-
-    
-    return JSON.stringify(layout, null, 2);
-  }
+  const layout = {
+    width: this.game.grid.width,
+    height: this.game.grid.height,
+    resolution: this.game.grid.resolution,
+    cells: this.game.grid.cells.map(cell => ({
+      wall: cell.wall,       // tableau de 2 dimensions
+      ceiling: cell.ceiling  // tableau de 2 dimensions
+    }))
+  };
+  return JSON.stringify(layout, null, 2);
+}
 
   
   loadLayout(json) {

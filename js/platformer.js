@@ -1,9 +1,8 @@
-// Grid cell, can have a wall on the left and a ceiling on top
 function PlatformerGridCell() {
-  this.wall = false;
-  this.ceiling = false;
+  // Par défaut, 2 dimensions : 0 et 1
+  this.wall = [false, false];
+  this.ceiling = [false, false];
 }
-
 // Platformer node, a dynamic object in the grid
 function PlatformerNode(x, y, width, height) {
   this.x = x;
@@ -95,17 +94,17 @@ PlatformerNode.prototype = {
   }
 };
 
-// The grid, containing cells and nodes colliding with cell walls
 function PlatformerGrid(width, height, resolution, gravity = 2500, friction = 1700) {
   this.width = width + 1;
   this.height = height + 1;
   this.resolution = resolution;
   this.gravity = gravity;
   this.friction = friction;
-  this.cells = [];
   this.nodes = [];
+  this.dimension = 0; // dimension active : 0 ou 1
+  this.cells = [];
 
-  for(var i = 0; i < this.width * this.height; ++i)
+  for (var i = 0; i < this.width * this.height; ++i)
     this.cells.push(new PlatformerGridCell());
 }
 
@@ -129,28 +128,29 @@ PlatformerGrid.prototype = {
   },
 
   getWall(x, y) {
-    if(!this.validateCoordinates(x, y))
-      return false;
+  if(!this.validateCoordinates(x, y))
+    return false;
 
-    return this.getCell(x, y).wall;
-  },
+  return this.getCell(x, y).wall[this.dimension];
+},
 
-  getCeiling(x, y) {
-    if(!this.validateCoordinates(x, y))
-      return false;
+getCeiling(x, y) {
+  if(!this.validateCoordinates(x, y))
+    return false;
 
-    return this.getCell(x, y).ceiling;
-  },
+  return this.getCell(x, y).ceiling[this.dimension];
+},
 
-  setWall(x, y, wall) {
-    if(this.validateCoordinates(x, y))
-      this.getCell(x, y).wall = wall;
-  },
+setWall(x, y, value) {
+  if(this.validateCoordinates(x, y))
+    this.getCell(x, y).wall[this.dimension] = value;
+},
 
-  setCeiling(x, y, ceiling) {
-    if(this.validateCoordinates(x, y))
-      this.getCell(x, y).ceiling = ceiling;
-  },
+setCeiling(x, y, value) {
+  if(this.validateCoordinates(x, y))
+    this.getCell(x, y).ceiling[this.dimension] = value;
+},
+
 
   addNode(node) {
     this.nodes.push(node);
@@ -304,32 +304,65 @@ PlatformerGrid.prototype = {
   },
 
   drawWalls(context) {
-    for(var x = 0; x < this.width; ++x) {
-      for(var y = 0; y < this.height; ++y) {
-        var cell = this.getCell(x, y);
+  for (var x = 0; x < this.width; ++x) {
+    for (var y = 0; y < this.height; ++y) {
+      var cell = this.getCell(x, y);
 
-        if(cell.wall) {
-          context.strokeStyle = this.EDGE_STROKE_STYLE;
-          context.lineWidth = this.EDGE_LINE_WIDTH;
+      // Dimension active
+      if(cell.wall[this.dimension]) {
+        context.strokeStyle = this.EDGE_STROKE_STYLE;
+        context.globalAlpha = 1;  // pleine visibilité
+        context.lineWidth = this.EDGE_LINE_WIDTH;
 
-          context.beginPath();
-          context.moveTo(x * this.resolution, (y + 1) * this.resolution);
-          context.lineTo(x * this.resolution, y * this.resolution);
-          context.stroke();
-        }
-
-        if(cell.ceiling) {
-          context.strokeStyle = this.EDGE_STROKE_STYLE;
-          context.lineWidth = this.EDGE_LINE_WIDTH;
-
-          context.beginPath();
-          context.moveTo((x + 1) * this.resolution, y * this.resolution);
-          context.lineTo(x * this.resolution, y * this.resolution);
-          context.stroke();
-        }
+        context.beginPath();
+        context.moveTo(x * this.resolution, (y + 1) * this.resolution);
+        context.lineTo(x * this.resolution, y * this.resolution);
+        context.stroke();
       }
+
+      if(cell.ceiling[this.dimension]) {
+        context.strokeStyle = this.EDGE_STROKE_STYLE;
+        context.globalAlpha = 1;
+        context.lineWidth = this.EDGE_LINE_WIDTH;
+
+        context.beginPath();
+        context.moveTo((x + 1) * this.resolution, y * this.resolution);
+        context.lineTo(x * this.resolution, y * this.resolution);
+        context.stroke();
+      }
+
+      // Dimension inactive (légèrement visible)
+      var inactiveDimension = 1 - this.dimension;
+
+      if(cell.wall[inactiveDimension]) {
+        context.strokeStyle = "blue";   // ou autre couleur discrète
+        context.globalAlpha = 0.3;      // opacité réduite
+        context.lineWidth = this.EDGE_LINE_WIDTH;
+
+        context.beginPath();
+        context.moveTo(x * this.resolution, (y + 1) * this.resolution);
+        context.lineTo(x * this.resolution, y * this.resolution);
+        context.stroke();
+      }
+
+      if(cell.ceiling[inactiveDimension]) {
+        context.strokeStyle = "blued";
+        context.globalAlpha = 0.3;
+        context.lineWidth = this.EDGE_LINE_WIDTH;
+
+        context.beginPath();
+        context.moveTo((x + 1) * this.resolution, y * this.resolution);
+        context.lineTo(x * this.resolution, y * this.resolution);
+        context.stroke();
+      }
+
+      context.globalAlpha = 1; // reset alpha après chaque cellule
     }
-  },
+  }
+
+
+}
+  ,
 
   drawNodes(context) {
     for(var i = 0; i < this.nodes.length; ++i) {

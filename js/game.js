@@ -62,6 +62,7 @@ Game.prototype = {
 });
 
   },
+  
 
   getCanvas() {
   const canvas = document.getElementById("renderer");
@@ -92,6 +93,10 @@ Game.prototype = {
     case this.controls.left:
       this.leftDown = true;
       break;
+      case "Space":
+  this.toggleDimension();
+  break;
+
   }
 },
 
@@ -232,5 +237,16 @@ Game.prototype = {
   if(this.controls[action] !== undefined) {
     this.controls[action] = newKeyCode;
   }
+  
+
 }
+
 };
+Game.prototype.toggleDimension = function() {
+  this.grid.dimension = 1 - this.grid.dimension; // change la dimension
+
+  // Vérifie immédiatement si le joueur est toujours sur le sol
+  this.player.onGround = false;  // reset onGround
+  this.grid.update(0);            // timeStep = 0 pour juste recalculer collisions
+};
+
