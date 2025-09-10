@@ -53,6 +53,7 @@ body {
     -moz-transform: scale(1.05);  
     -webkit-transform: scale(1.05);  
     -ms-transform: scale(1.05);   
+
 }
 
 /* GAME */ 
@@ -72,4 +73,26 @@ body {
 
 #renderer {
     transition: filter var(--transition-time);
+}
+
+/* INTRO */ 
+
+#intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%; /* Optional: controls wrapping */
+    transition: opacity var(--transition-time) ease-in-out;
+}
+
+#intro-messages {
+    color: hsl(var(--color-start-button));
+    font-family: "Story Script", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: xx-large;
+    opacity: 1;
+    transition: opacity var(--transition-time) ease-in-out;
 }
