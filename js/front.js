@@ -4,9 +4,8 @@ const body = document.body;
 
 
 function startGame(){
-    buttonAnimation();
-    let introTime = 2000; // time in ms
-    let animationTime = 8000; // time in ms
+    let animationTime = buttonAnimation(); // time in ms
+    let introTime = 8000; // time in ms
     let totalBeforeTime = introTime + animationTime; // time in ms
     setTimeout(() => {
         window.location.href = "index.html";
@@ -25,7 +24,7 @@ function buttonAnimation() {
         intro.style.zIndex = "200";
         intro.textContent = "Hello World !"
     }, transitionTime);
-
+    return transitionTime;
 }
 
 // FOR THE GAME 
