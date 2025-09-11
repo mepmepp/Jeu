@@ -54,7 +54,7 @@ function startGame() {
                     }, 2300);
                 })
                 .catch((error) => {
-                    console.log(`Music failed: ${error}`);
+                    console.warn(`Music failed: ${error}`);
                     setTimeout(() => {
                         window.location.href = "game.html";
                     }, 2000);
