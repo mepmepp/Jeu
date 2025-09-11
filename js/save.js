@@ -1,5 +1,9 @@
 window.addEventListener("DOMContentLoaded", () => {
-  
+  if (typeof game === "undefined" || !game.isEditor) {
+    // Si le jeu n'existe pas ou qu'on n'est pas en mode éditeur, ne rien faire
+    return;
+  }
+
   const menu = document.createElement("div");
   menu.id = "menu";
   menu.style.position = "fixed";
@@ -20,29 +24,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.body.appendChild(menu);
 
-  
-  if (typeof game === "undefined" || typeof editor === "undefined") {
-    console.error("❌ game ou editor n'existe pas encore !");
-    return;
-  }
-
-  
   document.getElementById("saveBtn").addEventListener("click", () => {
     console.log(editor.saveLayout());
     alert("Layout sauvegardé (voir console).");
   });
 
-  
   document.getElementById("exportBtn").addEventListener("click", () => {
     editor.exportLayout();
   });
 
-  
   document.getElementById("loadBtn").addEventListener("click", () => {
     document.getElementById("importFile").click();
   });
 
-  
   document.getElementById("importFile").addEventListener("change", (e) => {
     const file = e.target.files[0];
     if (file) {

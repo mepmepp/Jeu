@@ -1,5 +1,5 @@
 function Game(isEditor = false) {
-  this.isEditor = isEditor; // 👈 true = éditeur, false = jeu
+  this.isEditor = isEditor; // 
   this.mouseX = this.mouseY = 0;
   this.gridX = this.gridY = -1;
   this.gridWall = true;
