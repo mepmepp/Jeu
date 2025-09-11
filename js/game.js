@@ -11,7 +11,7 @@ function Game(isEditor = false) {
   
   this.COLUMNS = 40;
   this.ROWS = 20;
-  this.coyoteTime = 0;      
+  this.coyoteTime= 0;      
   this.COYOTE_TIME_MAX = 0.3; 
 
   this.backgroundImage = new Image();
@@ -233,9 +233,13 @@ onResize() {
   },
 
   movePlayer(timeStep) {
-    const characterSprite = new Image();
-    characterSprite.src = 'sprites/images/owlet/walk6.png';
-    let playerCoordinates = [this.player.x, this.player.y];
+
+    let playerX = this.player.x;
+    let playerY = this.player.y;
+    
+    document.documentElement.style.setProperty('--player-x', `${playerX}px`);
+    document.documentElement.style.setProperty('--player-y', `${playerY}px`);
+    console.log(`x: ${playerX}; y: ${playerY}`);
 
     if (this.rightDown) {
       this.player.setvx(Math.min(this.player.vx + this.PLAYER_WALK_ACCELERATION * timeStep, this.PLAYER_WALK_SPEED));

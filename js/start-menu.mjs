@@ -96,7 +96,7 @@ function intro() {
     intro.appendChild(introMessages);
     introMessages = document.getElementById('intro-messages');
 
-    let totalDelay = 0;
+    let totalDelay = 0; // total intro delay
     introLore.forEach((message) => {
         let displayTime = letterTime(message);
         if (displayTime < 3000) {
@@ -117,7 +117,7 @@ function intro() {
 }
 
 // function that fades in and fades out
-// parameters : - element: the element whe want to fade in and out
+// parameters : - element: the element we want to fade in and out
 //              - time: the time before fading out
 // output : void
 function toggleFadeText(element, time) {
