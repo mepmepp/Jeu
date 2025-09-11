@@ -1,3 +1,9 @@
+:root {
+  --player-coordinate-x: 500px;
+  --player-coordinate-y: 200px;
+}
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -12,4 +18,17 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* centre le canvas */
+}
+
+#player-sprite {
+  position: absolute;
+  border: 3px solid black;
+  width: 32px;
+  height: 32px;
+  background-image: url('/sprites/images/owlet/walk6.png');
+  background-size: 192px 32px;
+  background-position: 0 0;
+  left: 100px;
+  top: 500px;
+  z-index: 400;
 }

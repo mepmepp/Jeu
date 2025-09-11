@@ -233,6 +233,10 @@ onResize() {
   },
 
   movePlayer(timeStep) {
+    const characterSprite = new Image();
+    characterSprite.src = 'sprites/images/owlet/walk6.png';
+    let playerCoordinates = [this.player.x, this.player.y];
+
     if (this.rightDown) {
       this.player.setvx(Math.min(this.player.vx + this.PLAYER_WALK_ACCELERATION * timeStep, this.PLAYER_WALK_SPEED));
     }
