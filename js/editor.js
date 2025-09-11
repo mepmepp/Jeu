@@ -31,52 +31,34 @@ class LevelEditor {
 
   
   loadLayout(json) {
-    try {
-      const layout = JSON.parse(json);
+  try {
+    const layout = JSON.parse(json);
 
-      
-      if (
-        layout.width !== this.game.grid.width ||
-        layout.height !== this.game.grid.height ||
-        layout.resolution !== this.game.grid.resolution
-      ) {
-        console.warn("⚠️ Taille de grille différente, recréation forcée !");
-        this.game.grid = new PlatformerGrid(
-          layout.width,
-          layout.height,
-          layout.resolution
-        );
-        this.game.grid.addNode(this.game.player);
-      }
-
-      
-      for (let i = 0; i < layout.cells.length; i++) {
-        const cell = layout.cells[i];
-        for (const key in cell) {
-          if (cell.hasOwnProperty(key)) {
-            this.game.grid.cells[i][key] = cell[key];
-          }
-        }
-      }
-
-      
-      if (layout.playerSpawn) {
-        this.game.player.x = layout.playerSpawn.x * this.game.grid.resolution;
-        this.game.player.y = layout.playerSpawn.y * this.game.grid.resolution;
-        this.game.player.vx = 0;
-        this.game.player.vy = 0;
-        this.game.player.onGround = false;
-        this.game.jsonPlayerSpawn = {
-    x: layout.playerSpawn.x * this.game.grid.resolution,
-    y: layout.playerSpawn.y * this.game.grid.resolution
-  };
-      }
-
-      console.log("✅ Layout chargé !");
-    } catch (e) {
-      console.error("Erreur lors du parsing du layout :", e);
+    // Ne pas recréer la grille : utiliser toujours la grille existante
+    for (let i = 0; i < layout.cells.length && i < this.game.grid.cells.length; i++) {
+      this.game.grid.cells[i].wall = layout.cells[i].wall;
+      this.game.grid.cells[i].ceiling = layout.cells[i].ceiling;
+      this.game.grid.cells[i].goal = layout.cells[i].goal || false;
     }
+
+    if (layout.playerSpawn) {
+      this.game.player.x = layout.playerSpawn.x * this.game.grid.resolution;
+      this.game.player.y = layout.playerSpawn.y * this.game.grid.resolution;
+      this.game.player.vx = 0;
+      this.game.player.vy = 0;
+      this.game.player.onGround = false;
+      this.game.jsonPlayerSpawn = {
+        x: this.game.player.x,
+        y: this.game.player.y
+      };
+    }
+
+    console.log("✅ Layout chargé !");
+  } catch (e) {
+    console.error("Erreur lors du parsing du layout :", e);
   }
+}
+
 
   
   exportLayout() {
