@@ -51,7 +51,6 @@ function startGame() {
                 .then(() => {
                     setTimeout(() => {
                         window.location.href = "index.html";
-                        boom.play();
                     }, 2300);
                 })
                 .catch((error) => {
