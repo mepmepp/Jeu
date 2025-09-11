@@ -130,10 +130,8 @@ Le menu apparaît uniquement si `game.isEditor` est vrai.
 
 ## 🔜 Améliorations possibles
 
-* Ajouter des ennemis et obstacles
+* Ajouter des ennemis, obstacles et système de scoring
 * Plus d'animations pour le personnage
-* Editeur plus complet
-* Plus d’animations pour le personnage
 * Éditeur plus complet (sélection de tiles)
 * Effets sonores et musique
 * Intro et outro : possibilité de skip les messages un par un 
