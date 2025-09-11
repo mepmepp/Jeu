@@ -111,9 +111,9 @@ function PlatformerGrid(width, height, resolution, gravity = 2500, friction = 80
 }
 
 PlatformerGrid.prototype = {
-  EDGE_STROKE_STYLE: "blue",
+  EDGE_STROKE_STYLE: "white",
   EDGE_LINE_WIDTH: 4,
-  GRID_STROKE_STYLE: "gray",
+  GRID_STROKE_STYLE: "white",
   GRID_LINE_WIDTH: 0.5,
   PLAYER_FILL_STYLE: "red",
   EPSILON: 0.0000001,
@@ -180,10 +180,13 @@ PlatformerGrid.prototype = {
     const goalX = Math.floor((player.x + player.width / 2) / this.resolution);
     const goalY = Math.floor((player.y + player.height / 2) / this.resolution);
 
-    if (this.getGoal(goalX, goalY)) {
-      alert("🎉 Bravo, tu as atteint l’arrivée !");
-
-    }
+     if (this.getGoal(goalX, goalY)) {
+  if (this.game && !this.game.levelCompleted) {  // 👈 vérifie si déjà chargé
+    this.game.levelCompleted = true;            // bloque la répétition
+    this.game.loadNextLevel();
+  }
+  return;
+}
     for (var i = 0; i < this.nodes.length; ++i) {
       const node = this.nodes[i];
 
@@ -412,9 +415,11 @@ PlatformerGrid.prototype = {
     }
   },
 
-  draw(context) {
+  draw(context, isEditor) {
+  if (isEditor) {
     this.drawGrid(context);
-    this.drawWalls(context);
-    this.drawNodes(context);
   }
+  this.drawWalls(context);
+  this.drawNodes(context);
+}
 };
