@@ -1,5 +1,5 @@
 function PlatformerGridCell() {
-  
+
   this.wall = [false, false];
   this.ceiling = [false, false];
   this.goal = false;
@@ -100,10 +100,10 @@ function PlatformerGrid(width, height, resolution, gravity = 2500, friction = 80
   this.height = height + 1;
   this.resolution = resolution;
   this.gravity = gravity * (this.resolution / 32);
-this.friction = friction * (this.resolution / 32);
+  this.friction = friction * (this.resolution / 32);
 
   this.nodes = [];
-  this.dimension = 0; 
+  this.dimension = 0;
   this.cells = [];
 
   for (var i = 0; i < this.width * this.height; ++i)
@@ -176,7 +176,7 @@ PlatformerGrid.prototype = {
   },
 
   update(timeStep) {
-    const player = this.nodes[0]; 
+    const player = this.nodes[0];
     const goalX = Math.floor((player.x + player.width / 2) / this.resolution);
     const goalY = Math.floor((player.y + player.height / 2) / this.resolution);
 
@@ -187,7 +187,7 @@ PlatformerGrid.prototype = {
     for (var i = 0; i < this.nodes.length; ++i) {
       const node = this.nodes[i];
 
-      
+
       if (node.vx != 0) {
         node.limitXSpeed(timeStep);
 
@@ -195,7 +195,7 @@ PlatformerGrid.prototype = {
         node.xp = node.x;
         node.x += vx;
 
-        
+
         if (node.vx > 0) {
           if (node.getCellRight(node.x, this.resolution) != node.getCellRight(node.xp, this.resolution)) {
             const yCells = node.getYCells(this.resolution);
@@ -225,7 +225,7 @@ PlatformerGrid.prototype = {
           }
         }
 
-        
+
         if (node.onGround) {
           const xCells = node.getXCells(this.resolution);
 
@@ -241,7 +241,7 @@ PlatformerGrid.prototype = {
           }
         }
 
-        
+
         if (node.onGround) {
           if (node.vx > 0) {
             node.vx -= this.friction * timeStep;
@@ -258,12 +258,12 @@ PlatformerGrid.prototype = {
         }
       }
 
-      
+
       if (!node.onGround) {
         node.vy += this.gravity * timeStep;
       }
 
-      
+
       if (node.vy != 0) {
         node.limitYSpeed(timeStep);
 
@@ -271,7 +271,7 @@ PlatformerGrid.prototype = {
         node.yp = node.y;
         node.y += vy;
 
-        
+
         if (node.vy > 0) {
           if (node.getCellBottom(node.y, this.resolution) != node.getCellBottom(node.yp, this.resolution)) {
             const xCells = node.getXCells(this.resolution);
@@ -328,10 +328,10 @@ PlatformerGrid.prototype = {
       for (var y = 0; y < this.height; ++y) {
         var cell = this.getCell(x, y);
 
-        
+
         if (cell.wall[this.dimension]) {
           context.strokeStyle = this.EDGE_STROKE_STYLE;
-          context.globalAlpha = 1;  
+          context.globalAlpha = 1;
           context.lineWidth = this.EDGE_LINE_WIDTH;
 
           context.beginPath();
@@ -352,28 +352,28 @@ PlatformerGrid.prototype = {
         }
 
         if (cell.goal) {
-  const margin = this.resolution * 0.05; 
-  const size = this.resolution - margin * 2;
+          const margin = this.resolution * 0.05;
+          const size = this.resolution - margin * 2;
 
-  context.fillStyle = "gold";
-  context.globalAlpha = 0.8;
-  context.fillRect(
-    x * this.resolution + margin,
-    y * this.resolution + margin,
-    size,
-    size
-  );
-  context.globalAlpha = 1;
-}
+          context.fillStyle = "gold";
+          context.globalAlpha = 0.8;
+          context.fillRect(
+            x * this.resolution + margin,
+            y * this.resolution + margin,
+            size,
+            size
+          );
+          context.globalAlpha = 1;
+        }
 
 
 
-        
+
         var inactiveDimension = 1 - this.dimension;
 
         if (cell.wall[inactiveDimension]) {
-          context.strokeStyle = "blue";   
-          context.globalAlpha = 0.3;      
+          context.strokeStyle = "blue";
+          context.globalAlpha = 0.3;
           context.lineWidth = this.EDGE_LINE_WIDTH;
 
           context.beginPath();
@@ -393,7 +393,7 @@ PlatformerGrid.prototype = {
           context.stroke();
         }
 
-        context.globalAlpha = 1; 
+        context.globalAlpha = 1;
       }
     }
 

@@ -50,13 +50,13 @@ function startGame() {
             boom.play()
                 .then(() => {
                     setTimeout(() => {
-                        window.location.href = "index.html";
+                        window.location.href = "game.html";
                     }, 2300);
                 })
                 .catch((error) => {
                     console.log(`Music failed: ${error}`);
                     setTimeout(() => {
-                        window.location.href = "index.html";
+                        window.location.href = "game.html";
                     }, 2000);
                 });
         }, totalBeforeTime);

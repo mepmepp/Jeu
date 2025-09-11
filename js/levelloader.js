@@ -79,8 +79,9 @@ class LevelLoader {
   initKeyboardControls() {
     window.addEventListener("keydown", async (e) => {
       if (e.code === "KeyN") {
+        console.log("Niveau suivant..."); 
         await this.nextLevel();
-      } else if (e.code === "KeyP") {
+      } else if (e.code === "KeyB") {
         await this.previousLevel();
       }
     });
