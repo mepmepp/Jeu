@@ -73,9 +73,8 @@ if (window.location.pathname == "/ending.html") {
 // START GAME FUNCTION
 /////////////////////////
 
-export function startGame() {
-    let animationTime = buttonAnimation();
-    setTimeout(() => {
+export async function startGame() {
+    let animationTime = await buttonAnimation();
         fadeInMusic(introAudio);
         let introTime = intro();
         let totalBeforeTime = introTime + animationTime;
@@ -85,7 +84,6 @@ export function startGame() {
                 .then(() => setTimeout(() => window.location.href = "game.html", 2300))
                 .catch(() => setTimeout(() => window.location.href = "game.html", 2000));
         }, totalBeforeTime);
-    }, animationTime);
 }
 
 ///////////////////////
@@ -94,12 +92,13 @@ export function startGame() {
 
 export function endGame() {
     fadeInMusic(outroAudio);
-    let ontroDiv = document.createElement('div');
+
+    const ontroDiv = document.createElement('div');
     ontroDiv.id = "outro";
     ontroDiv.style.zIndex = "300";
     document.body.appendChild(ontroDiv);
 
-    let ontroMessages = document.createElement('p');
+    const ontroMessages = document.createElement('p');
     ontroMessages.id = "intro-messages";
     ontroMessages.style.opacity = 0;
     ontroDiv.appendChild(ontroMessages);
@@ -121,6 +120,7 @@ export function endGame() {
     setTimeout(() => {
         slowlyFadeOutMusic(outroAudio);
     }, totalDelay);
+
     return totalDelay;
 }
 
@@ -128,17 +128,39 @@ export function endGame() {
 // BUTTON ANIMATION
 /////////////////////////
 
+// function buttonAnimation() {
+//     const transitionTime = 2000;
+//     startButton.style.transform = "scale(200)";
+//     startButton.style.opacity = "0";
+//     startButton.style.pointerEvents = "none";
+//     setTimeout(() => {
+//         startButton.style.visibility = "hidden";
+//     }, transitionTime);
+//     startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime / 2}ms`;
+
+//     fadeOutMusic(startAudio);
+//     return transitionTime;
+// }
+
 function buttonAnimation() {
-    let transitionTime = 2000;
-    startButton.style.transform = "scale(200)";
-    startButton.style.opacity = "0";
-    startButton.style.pointerEvents = "none";
-    setTimeout(() => {
+  return new Promise((resolve) => {
+    const transitionTime = 2000;
+    if (startButton) {
+      startButton.style.transform = "scale(200)";
+      startButton.style.opacity = "0";
+      startButton.style.pointerEvents = "none";
+      startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime / 2}ms`;
+
+      setTimeout(() => {
         startButton.style.visibility = "hidden";
-    }, transitionTime);
-    startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime / 2}ms`;
+        resolve(transitionTime);
+      }, transitionTime);
+    } else {
+      resolve(transitionTime);
+    }
+
     fadeOutMusic(startAudio);
-    return transitionTime;
+  });
 }
 
 /////////////////////////
@@ -157,12 +179,12 @@ function clearIntroTimeouts() {
 }
 
 function intro() {
-    let introDiv = document.createElement('div');
+    const introDiv = document.createElement('div');
     introDiv.id = "intro";
     introDiv.style.zIndex = "300";
     document.body.appendChild(introDiv);
 
-    let introMessages = document.createElement('p');
+    const introMessages = document.createElement('p');
     introMessages.id = "intro-messages";
     introMessages.style.opacity = 0;
     introDiv.appendChild(introMessages);
@@ -201,9 +223,8 @@ function toggleFadeText(element, time) {
 // LETTER TIME
 /////////////////////////
 
-function letterTime(string) {
-    let count = string.length;
-    return count * 50;
+function letterTime(text) {
+    return text.length * 50;
 }
 
 /////////////////////////
