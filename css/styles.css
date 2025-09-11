@@ -32,6 +32,8 @@ body {
     padding-bottom: var(--button-padding-height);
     padding-top: var(--button-padding-height);
 
+    margin: var(--button-padding-height);
+
     font-family: "Story Script", sans-serif;
     font-weight: 200;
     font-style: normal;
@@ -63,6 +65,10 @@ body {
     opacity: 0;
     pointer-events: none;
     z-index: 100;
+}
+
+#pause-menu .button {
+    background-color: hsl(var(--color-background));
 }
 
 .blur-effect {
