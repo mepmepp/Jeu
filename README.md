@@ -5,6 +5,8 @@
 Un moteur de jeu de plateforme en **JavaScript/HTML5** avec un éditeur intégré pour créer, modifier et charger des niveaux.
 Projet réalisé dans le cadre du module **Renforcement JS / TS**.
 
+GitHub https://github.com/mepmepp/Jeu
+
 ---
 
 ## 🚀 Lancer la demo
