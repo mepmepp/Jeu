@@ -7,11 +7,30 @@ export const startAudio = new Audio('sprites/sounds/no-more-magic.mp3');
 export const introAudio = new Audio('sprites/sounds/dripping-water.mp3');
 export const boom = new Audio('/sprites/sounds/boom.mp3');
 
+if (window.location.pathname == "/index.html") {
+    window.addEventListener("load", () => {
+        playMusic(startAudio);
+    });
+}
+
 window.addEventListener("load", () => {
-    playMusic(startAudio);
+    let location = window.location.pathname;
+    console.log(`We are here: ${location}.`)
+    if (window.location.pathname == "/game.html") {
+        playMusic(gameMusic);
+    }
+});
+
+window.addEventListener("keydown" || "click", () => {
+    let location = window.location.pathname;
+    console.log(`We are here: ${location}.`)
+    if (window.location.pathname == "/game.html") {
+        playMusic(gameMusic);
+    }
 });
 
 export function playMusic(audio) {
+    audio.volume = 0.3;
     audio.play()
         .then(() => {
             console.log(`${audio.src} is playing!`);
