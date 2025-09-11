@@ -81,6 +81,10 @@ body {
     transition: filter var(--transition-time);
 }
 
+#instructions {
+    border: 2px solid black;
+}
+
 /* INTRO */ 
 
 #intro {
@@ -102,3 +106,4 @@ body {
     opacity: 1;
     transition: opacity var(--transition-time) ease-in-out;
 }
+

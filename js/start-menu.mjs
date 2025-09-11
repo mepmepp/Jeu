@@ -144,14 +144,11 @@ function letterTime(string) {
 function createSkipButton() {
     const skipBtn = document.createElement('button');
     skipBtn.id = "skip-intro";
-    skipBtn.textContent = "Skip Intro";
+    skipBtn.className = "button";
     skipBtn.style.position = "fixed";
-    skipBtn.style.top = "20px";
-    skipBtn.style.right = "20px";
-    skipBtn.style.zIndex = 500;
-    skipBtn.style.padding = "10px 20px";
-    skipBtn.style.fontSize = "16px";
-    skipBtn.style.cursor = "pointer";
+    skipBtn.style.right = "10px";
+    skipBtn.style.top = "10px";
+    skipBtn.textContent = "Skip";
     document.body.appendChild(skipBtn);
 
     skipBtn.addEventListener("click", skipIntro);
