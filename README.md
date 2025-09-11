@@ -7,6 +7,12 @@ Projet réalisé dans le cadre du module **Renforcement JS / TS**.
 
 ---
 
+## 🚀 Lancer la demo
+
+Se lance avec l'extension Live Server
+
+---
+
 ## 📂 Structure du projet
 
 ```
