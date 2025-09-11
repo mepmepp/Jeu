@@ -14,11 +14,12 @@ window.addEventListener("keydown", (event) => {
     switch (keyPressed) {
         case "p": 
             changeGameState();
+        case "t": 
+            goToTuto();
     }
-
 });
 
-function changeGameState(){
+function changeGameState() {
     if (gameIsRunning) {
         pauseMenu.style.opacity = "1";
         pauseMenu.style.pointerEvents = "all";
@@ -41,4 +42,23 @@ function changeGameState(){
     }
     pauseMenu.style.transition = "opacity var(--transition-time) ease-in-out";
     gameIsRunning = !gameIsRunning;
+}
+
+function createTutoButton() {
+    const tutoBtn = document.createElement('button');
+    tutoBtn.id = "skip-intro";
+    tutoBtn.className = "button";
+    tutoBtn.style.position = "fixed";
+    tutoBtn.style.right = "10px";
+    tutoBtn.style.top = "10px";
+    tutoBtn.textContent = "Tuto";
+    document.body.appendChild(tutoBtn);
+
+    tutoBtn.addEventListener("click", goToTuto);
+}
+
+createTutoButton();
+
+function goToTuto() {
+    window.location.href = "tuto.html";
 }

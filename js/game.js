@@ -396,6 +396,7 @@ Game.prototype.loadNextLevel = function () {
       this.levelCompleted = false; 
     })
     .catch(err => {
-      alert("🎉 Bravo, tu as fini tous les niveaux !");
+      // alert("🎉 Bravo, tu as fini tous les niveaux !");
+      window.location.href = "ending.html";
     });
 };

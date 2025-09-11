@@ -1,4 +1,4 @@
-import { fadeInMusic, fadeOutMusic, startAudio, introAudio, boom, playMusic } from "./audio.mjs";
+import { fadeInMusic, fadeOutMusic, startAudio, introAudio, outroAudio, boom, playMusic } from "./audio.mjs";
 
 ////////////////
 // START MENU //
@@ -19,6 +19,17 @@ const introLore = [
     'And hurry… before the voice finds you again.'
 ];
 
+const outroLore = [
+    'On the damp wall, an inscription shimmers faintly — your own name, etched in stone.',
+    'The handwriting is familiar, carved with a hand that mirrors yours.',
+    'As your eyes trace the letters, a chill runs through you: you have been here before.',
+    'The voice was no stranger — it is the echo of your own past, twisted and hungry.',
+    'Every step you\'ve taken brought you closer to truth… or to ruin.',
+    'The shadows do not lie: you are not just trapped here.',
+    'You are the reason this place exists.',
+    'And it will not let its master leave so easily.'
+]
+
 let introTimeouts = []; // pour stocker les setTimeout de l'intro
 
 /////////////////////////
@@ -36,9 +47,17 @@ window.addEventListener("keydown", (event) => {
     }
 });
 
-startButton.addEventListener("click", () => startGame());
+if (window.location.pathname == "/index.html") {
+    startButton.addEventListener("click", () => startGame());
+}
 
 window.startGame = startGame;
+
+if (window.location.pathname == "/ending.html") {
+    window.addEventListener("load", () => {
+        endGame();
+    });
+}
 
 /////////////////////////
 // START GAME FUNCTION
@@ -59,6 +78,42 @@ export function startGame() {
     }, animationTime);
 }
 
+///////////////////////
+// END GAME FUNCTION 
+///////////////////////
+
+export function endGame() {
+    fadeInMusic(outroAudio);
+    let ontroDiv = document.createElement('div');
+    ontroDiv.id = "outro";
+    ontroDiv.style.zIndex = "300";
+    document.body.appendChild(ontroDiv);
+
+    let ontroMessages = document.createElement('p');
+    ontroMessages.id = "intro-messages";
+    ontroMessages.style.opacity = 0;
+    ontroDiv.appendChild(ontroMessages);
+
+    let totalDelay = 0;
+    outroLore.forEach((message) => {
+        let displayTime = letterTime(message);
+        if (displayTime < 3000) displayTime += 2000;
+        else if (displayTime < 4000) displayTime += 500;
+
+        setIntroTimeout(() => {
+            ontroMessages.textContent = message;
+            toggleFadeText(ontroMessages, displayTime);
+        }, totalDelay);
+
+        totalDelay += displayTime + 1000;
+    });
+
+    setTimeout(() => {
+        fadeOutMusic(outroAudio);
+    }, totalDelay);
+    return totalDelay;
+}
+
 /////////////////////////
 // BUTTON ANIMATION
 /////////////////////////
@@ -67,6 +122,7 @@ function buttonAnimation() {
     let transitionTime = 2000;
     startButton.style.transform = "scale(200)";
     startButton.style.opacity = "0";
+    startButton.style.display = "none";
     startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime / 2}ms`;
     fadeOutMusic(startAudio);
     return transitionTime;

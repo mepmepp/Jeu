@@ -6,6 +6,7 @@ export const gameMusic = new Audio('sprites/sounds/strange-mist.mp3'); // Peder 
 export const startAudio = new Audio('sprites/sounds/no-more-magic.mp3');
 export const introAudio = new Audio('sprites/sounds/dripping-water.mp3');
 export const boom = new Audio('/sprites/sounds/boom.mp3');
+export const outroAudio = new Audio('/sprites/sounds/hidden-truth.mp3');
 
 if (window.location.pathname == "/index.html") {
     window.addEventListener("load", () => {

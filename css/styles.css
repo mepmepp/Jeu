@@ -19,6 +19,11 @@ body {
     align-items: center;
     height: 95vh;
     background-color: hsl(var(--color-background));
+
+    font-family: "Story Script", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: x-large;
 }
 
 .button {
@@ -67,10 +72,6 @@ body {
     z-index: 100;
 }
 
-#pause-menu .button {
-    background-color: hsl(var(--color-background));
-}
-
 .blur-effect {
     filter: blur(5px);
     pointer-events: none;
@@ -81,8 +82,52 @@ body {
     transition: filter var(--transition-time);
 }
 
-#instructions {
-    border: 2px solid black;
+/* INSTRUCTIONS OVERLAY */
+
+.instructions {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto;
+    position: absolute;
+    align-self: center;
+    /* border: 2px solid white; */
+    left: 10px;
+    top: 10px;
+    width: fit-content;
+}
+
+.instruction-row {
+    display: contents;
+    align-self: center;
+}
+
+.instruction-items {
+    color: hsl(var(--color-start-button));
+    width: fit-content;
+    height: fit-content;
+    margin-left: 35px;
+    /* border: 2px solid white; */
+    align-self: center;
+    
+}
+
+#directions {
+    width: 100px;
+}
+
+#space {
+    width: 100px;
+}
+
+#p {
+    width: 50px;
+    transform: translate(22px, 0px);
+}
+
+#out-of-tuto {
+    position: fixed;
+    top: 10px;
+    right: 10px;
 }
 
 /* INTRO */ 
@@ -93,7 +138,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 80%; /* Optional: controls wrapping */
+    width: 80%; 
     transition: opacity var(--transition-time) ease-in-out;
 }
 

@@ -82,6 +82,8 @@ Inclure les scripts dans `index.html` :
 * **A** → Gauche
 * **D** → Droite
 * **Space** → Changer de dimension
+* **P** → Mettre le jeu en pause (visuellement)
+* **T** → Accéder au tuto
 * **G** → Placer/retirer goal (éditeur)
 
 ---
@@ -129,9 +131,13 @@ Le menu apparaît uniquement si `game.isEditor` est vrai.
 ## 🔜 Améliorations possibles
 
 * Ajouter des ennemis et obstacles
+* Plus d'animations pour le personnage
+* Editeur plus complet
 * Plus d’animations pour le personnage
 * Éditeur plus complet (sélection de tiles)
 * Effets sonores et musique
+* Intro et outro : possibilité de skip les messages un par un 
+* Commandes clavier pour tous les boutons
 
 ---
 
