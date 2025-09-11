@@ -182,7 +182,8 @@ PlatformerGrid.prototype = {
 
      if (this.getGoal(goalX, goalY)) {
   if (this.game && !this.game.levelCompleted) {  // 👈 vérifie si déjà chargé
-    this.game.levelCompleted = true;            // bloque la répétition
+    this.game.levelCompleted = true;   
+    this.dimension = 0;        
     this.game.loadNextLevel();
   }
   return;
