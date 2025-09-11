@@ -55,6 +55,7 @@ window.addEventListener("keydown", (event) => {
 if (startButton) {
     startButton.addEventListener("click", () => {
         if (startGameRun === false) {
+            startButton.classList.add("button-hover");
             startGame();
             startGameRun = true;
         }
