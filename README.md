@@ -103,16 +103,16 @@ Le menu apparaît uniquement si `game.isEditor` est vrai.
 | Catégorie            | Exigence                          | Où utilisé ?                                                          |
 | -------------------- | --------------------------------- | --------------------------------------------------------------------- |
 | **ES6+**             | `let` / `const`                   | partout dans les fichiers                                             |
-|                      | Fonctions fléchées                | `editor.js` → `reader.onload = e => {...}`                            |
-|                      | Template literals                 | `levelloader.js` → ``console.log(`✅ Niveau ${levelName} chargé !`)``  |
+|                      | Fonctions fléchées                | `editor.js` → `reader.onload = e => {...}`, `front.js`, `audio.mjs`   |
+|                      | Template literals                 | `levelloader.js` → ``console.log(`✅ Niveau ${levelName} chargé !`)`` |
 |                      | Destructuring                     | `editor.js` et `levelloader.js` → `const {x, y} = layout.playerSpawn` |
-|                      | Spread operator                   | utilisé dans la version TS                                            |
+|                      | Spread operator                   | utilisé dans la version TS et `front.js`                              |
 |                      | Modules (fichiers séparés)        | `game.js`, `editor.js`, `levelloader.js`, `platformer.js`, `save.js`  |
 |                      | Closures                          | `game.js` → compteur de sauts (fonction qui mémorise l’état)          |
 |                      | this / bind                       | `game.js` → `this.keyDown.bind(this)`                                 |
 | **DOM & événements** | Création DOM                      | `save.js` → `document.createElement("div")`                           |
 |                      | Gestion d’événements              | clavier (mouvements), souris (éditeur)                                |
-|                      | Modification CSS                  | `save.js` → `menu.style...`                                           |
+|                      | Modification CSS                  | `save.js` → `menu.style...`, `front.js`, `start-menu.mjs`             |
 |                      | Animation (requestAnimationFrame) | `game.js` → `animate()`                                               |
 | **Asynchronisme**    | Promises                          | `game.js` → `fetch(...).then(...)`                                    |
 |                      | async/await                       | `levelloader.js` → `async loadLevel()`                                |
