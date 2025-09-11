@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
     }
 });
 
-window.addEventListener("keydown" || "click", () => {
+window.addEventListener("keydown", () => {
     let location = window.location.pathname;
     console.log(`We are here: ${location}.`)
     if (window.location.pathname == "/game.html") {
@@ -59,6 +59,7 @@ export function fadeInMusic(audio) {
         .catch((error) => {
             console.warn("Playback failed: ", error);
     });
+
     console.log(`${audio.src} volume at ${audio.volume}.`)
 }
 
@@ -73,6 +74,7 @@ export function fadeOutMusic(audio) {
             clearInterval(fadeOut);
         }
     }, 100);
+
     console.log(`${audio} volume at ${audio.volume}.`)
 }
 
@@ -87,5 +89,6 @@ export function slowlyFadeOutMusic(audio) {
             clearInterval(fadeOut);
         }
     }, 100);
+    
     console.log(`${audio} volume at ${audio.volume}.`)
 }
