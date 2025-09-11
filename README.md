@@ -1,22 +1,22 @@
-
+---
 
 # 🎮 Platformer 2D avec Éditeur de Niveaux
 
-Un moteur de jeu de plateforme en JavaScript/HTML5 avec un éditeur intégré pour créer, modifier et charger des niveaux.
+Un moteur de jeu de plateforme en **JavaScript/HTML5** avec un éditeur intégré pour créer, modifier et charger des niveaux.
+Projet réalisé dans le cadre du module **Renforcement JS / TS**.
 
 ---
 
 ## 📂 Structure du projet
 
 ```
-
 /project-root
 │
 ├─ index.html         # Page principale
 ├─ game.js            # Logique du jeu, joueur, collisions, etc.
 ├─ platformer.js      # Classes PlatformerGrid, PlatformerNode, etc.
 ├─ editor.js          # LevelEditor : créer et modifier les niveaux
-├─ loader.js          # LevelLoader : charger/naviguer entre les niveaux
+├─ levelloader.js     # LevelLoader : charger/naviguer entre les niveaux
 ├─ save.js            # Menu sauvegarde/export/import
 ├─ json/              # Fichiers JSON des niveaux
 │    ├─ level1.json
@@ -24,9 +24,9 @@ Un moteur de jeu de plateforme en JavaScript/HTML5 avec un éditeur intégré po
 │    └─ ...
 ├─ sprites/images/    # Images & backgrounds
 │    └─ cave.jpg
+├─ *.ts               # Version TypeScript des modules
 └─ README.md
-
-````
+```
 
 ---
 
@@ -36,16 +36,17 @@ Inclure les scripts dans `index.html` :
 
 ```html
 <script src="platformer.js"></script>
-<script src="game.js"></script>
 <script src="editor.js"></script>
-<script src="loader.js"></script>
+<script src="levelloader.js"></script>
+<script src="game.js"></script>
 <script src="save.js"></script>
+
 <script>
   const game = new Game(true); // true = éditeur, false = jeu
-  game.run();
   const editor = new LevelEditor(game);
+  game.run();
 </script>
-````
+```
 
 ---
 
@@ -69,20 +70,19 @@ Inclure les scripts dans `index.html` :
 
 ### Graphisme
 
-* Background avec image adaptable à la taille du canvas
+* Background redimensionnable avec le canvas
 * Grille visible uniquement en mode éditeur
-* Player et murs rendus dynamiquement
+* Sprite animé pour le joueur
 
 ---
 
 ## 🕹️ Contrôles
 
-* **Z** → Saut
-* **Q** → Gauche
+* **W** → Saut
+* **A** → Gauche
 * **D** → Droite
 * **Space** → Changer de dimension
 * **G** → Placer/retirer goal (éditeur)
-
 
 ---
 
@@ -92,23 +92,45 @@ Inclure les scripts dans `index.html` :
 * **Export** → télécharge le layout en JSON
 * **Load** → importer un fichier JSON existant
 
-> Le menu apparaît uniquement si `game.isEditor` est vrai.
+Le menu apparaît uniquement si `game.isEditor` est vrai.
 
 ---
 
-## 🛠️ Notes techniques
+## 🛠️ Implémentation des contraintes (PDF)
 
-* Canvas redimensionnable, mais le nombre de colonnes (`COLUMNS`) et lignes (`ROWS`) reste fixe pour garantir la compatibilité des niveaux.
-* La grille gère collisions et rendu des murs/ceilings.
-* Menu `save.js` indépendant, lié à l’instance de jeu pour vérifier `isEditor`.
+| Catégorie            | Exigence                          | Où utilisé ?                                                          |
+| -------------------- | --------------------------------- | --------------------------------------------------------------------- |
+| **ES6+**             | `let` / `const`                   | partout dans les fichiers                                             |
+|                      | Fonctions fléchées                | `editor.js` → `reader.onload = e => {...}`                            |
+|                      | Template literals                 | `levelloader.js` → ``console.log(`✅ Niveau ${levelName} chargé !`)``  |
+|                      | Destructuring                     | `editor.js` et `levelloader.js` → `const {x, y} = layout.playerSpawn` |
+|                      | Spread operator                   | utilisé dans la version TS                                            |
+|                      | Modules (fichiers séparés)        | `game.js`, `editor.js`, `levelloader.js`, `platformer.js`, `save.js`  |
+|                      | Closures                          | `game.js` → compteur de sauts (fonction qui mémorise l’état)          |
+|                      | this / bind                       | `game.js` → `this.keyDown.bind(this)`                                 |
+| **DOM & événements** | Création DOM                      | `save.js` → `document.createElement("div")`                           |
+|                      | Gestion d’événements              | clavier (mouvements), souris (éditeur)                                |
+|                      | Modification CSS                  | `save.js` → `menu.style...`                                           |
+|                      | Animation (requestAnimationFrame) | `game.js` → `animate()`                                               |
+| **Asynchronisme**    | Promises                          | `game.js` → `fetch(...).then(...)`                                    |
+|                      | async/await                       | `levelloader.js` → `async loadLevel()`                                |
+|                      | try/catch                         | `levelloader.js` → parsing layout                                     |
+|                      | Promise.all                       | utilisé en TS (préchargement assets)                                  |
+| **TypeScript**       | Interfaces                        | `platformer.ts` → `interface Cell`, `interface Player`                |
+|                      | Typage strict                     | partout dans `.ts`                                                    |
+|                      | Optional chaining                 | `grid.update()` → `this.game?.loadNextLevel()` en TS                  |
+|                      | Union / optionnels                | `save.ts` → `input.files?.[0] ?? null`                                |
+| **Architecture**     | Séparation modules                | chaque fonctionnalité dans un fichier dédié                           |
+|                      | Gestion d’état                    | `game.js` → `player`, `grid`, `levelCompleted`, `jsonPlayerSpawn`     |
+|                      | Commentaires                      | explications présentes dans chaque fichier                            |
 
 ---
 
 ## 🔜 Améliorations possibles
 
 * Ajouter des ennemis et obstacles
-* PLus d'animations pour le personnage
-* Editeur plus complet
+* Plus d’animations pour le personnage
+* Éditeur plus complet (sélection de tiles)
 * Effets sonores et musique
 
 ---
@@ -117,5 +139,5 @@ Inclure les scripts dans `index.html` :
 
 Projet personnel / Open source (MIT recommandé)
 
-```
+---
 

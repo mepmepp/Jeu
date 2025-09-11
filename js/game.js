@@ -19,13 +19,19 @@ function Game(isEditor = false) {
 
   this.levelCompleted = false;
 
-  
+  // ✅ Closure : compteur de sauts
+  const createCounter = () => {
+    let count = 0;
+    return () => ++count;
+  };
+  this.jumpCounter = createCounter();
+
   this.getCanvas();
 
   this.PLAYER_SIZE = Math.round(Game.prototype.PLAYER_SIZE * (this.GRID_RESOLUTION / 32));
-this.PLAYER_JUMP_SPEED = Game.prototype.PLAYER_JUMP_SPEED * (this.GRID_RESOLUTION / 32);
-this.PLAYER_WALK_SPEED = Game.prototype.PLAYER_WALK_SPEED * (this.GRID_RESOLUTION / 32);
-this.PLAYER_WALK_ACCELERATION = Game.prototype.PLAYER_WALK_ACCELERATION * (this.GRID_RESOLUTION / 32);
+  this.PLAYER_JUMP_SPEED = Game.prototype.PLAYER_JUMP_SPEED * (this.GRID_RESOLUTION / 32);
+  this.PLAYER_WALK_SPEED = Game.prototype.PLAYER_WALK_SPEED * (this.GRID_RESOLUTION / 32);
+  this.PLAYER_WALK_ACCELERATION = Game.prototype.PLAYER_WALK_ACCELERATION * (this.GRID_RESOLUTION / 32);
 
   this.grid = new PlatformerGrid(this.COLUMNS, this.ROWS, this.GRID_RESOLUTION);
 
@@ -46,7 +52,13 @@ this.PLAYER_WALK_ACCELERATION = Game.prototype.PLAYER_WALK_ACCELERATION * (this.
 
   this.addListeners();
 
-  // 👇 Charger le niveau par défaut si on est en mode jeu
+  // ✅ Instancie le LevelLoader et déclenche le chargement parallèle des assets
+  this.levelLoader = new LevelLoader(this);
+  if (typeof this.levelLoader.preloadAssets === "function") {
+    this.levelLoader.preloadAssets();
+  }
+
+  // Charger le niveau par défaut si on est en mode jeu
   if (!this.isEditor) {
     fetch("json/level1.json")
       .then(res => res.json())
@@ -82,51 +94,49 @@ Game.prototype = {
       this.getCanvas().addEventListener("mouseout", this.mouseLeave.bind(this));
     }
 
-     window.addEventListener("keydown", this.keyDown.bind(this));
-  window.addEventListener("keyup", this.keyUp.bind(this));
-  window.addEventListener("resize", this.onResize.bind(this));
+    window.addEventListener("keydown", this.keyDown.bind(this));
+    window.addEventListener("keyup", this.keyUp.bind(this));
+    window.addEventListener("resize", this.onResize.bind(this));
   },
 
   getCanvas() {
-  const canvas = document.getElementById("renderer");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+    const canvas = document.getElementById("renderer");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-  // Garder toujours COLUMNS × ROWS
-  this.GRID_RESOLUTION = Math.floor(Math.min(canvas.width / this.COLUMNS, canvas.height / this.ROWS));
+    // Garder toujours COLUMNS × ROWS
+    this.GRID_RESOLUTION = Math.floor(Math.min(canvas.width / this.COLUMNS, canvas.height / this.ROWS));
 
-  return canvas;
-}
-,
-onResize() {
-  // recalcule GRID_RESOLUTION et met à jour canvas et grille
-  const canvas = this.getCanvas();
-
-  // Met à jour la résolution de la grille existante (si elle existe)
-  if (this.grid) {
-    this.grid.resolution = this.GRID_RESOLUTION;
+    return canvas;
   }
+  ,
+  onResize() {
+    // recalcule GRID_RESOLUTION et met à jour canvas et grille
+    const canvas = this.getCanvas();
 
-  // Met à jour la taille du joueur (si on souhaite que le joueur suive la nouvelle résolution)
-  // On conserve la position au même indice de case : convertit en coords de grille -> pixels
-  if (this.player) {
-    // calcule le centre du joueur en cases (coordGrille)
-    const centerGridX = (this.player.x + this.player.width / 2) / this.GRID_RESOLUTION;
-    const centerGridY = (this.player.y + this.player.height / 2) / this.GRID_RESOLUTION;
+    // Met à jour la résolution de la grille existante (si elle existe)
+    if (this.grid) {
+      this.grid.resolution = this.GRID_RESOLUTION;
+    }
 
-    // rescale PLAYER_SIZE
-    this.PLAYER_SIZE = Math.round(Game.prototype.PLAYER_SIZE * (this.GRID_RESOLUTION / 32));
+    // Met à jour la taille du joueur (si on souhaite que le joueur suive la nouvelle résolution)
+    // On conserve la position au même indice de case : convertit en coords de grille -> pixels
+    if (this.player) {
+      // calcule le centre du joueur en cases (coordGrille)
+      const centerGridX = (this.player.x + this.player.width / 2) / this.GRID_RESOLUTION;
+      const centerGridY = (this.player.y + this.player.height / 2) / this.GRID_RESOLUTION;
 
-    // repositionne le joueur centré sur la même case
-    this.player.width = this.player.height = this.PLAYER_SIZE;
-    this.player.x = Math.floor(centerGridX) * this.GRID_RESOLUTION + (this.GRID_RESOLUTION - this.PLAYER_SIZE) / 2;
-    this.player.y = Math.floor(centerGridY) * this.GRID_RESOLUTION + (this.GRID_RESOLUTION - this.PLAYER_SIZE) / 2;
-  }
+      // rescale PLAYER_SIZE
+      this.PLAYER_SIZE = Math.round(Game.prototype.PLAYER_SIZE * (this.GRID_RESOLUTION / 32));
 
-  // si tu stockes spawn en coordonnées de grille, tu pourrais recalculer jsonPlayerSpawn ici.
-},
+      // repositionne le joueur centré sur la même case
+      this.player.width = this.player.height = this.PLAYER_SIZE;
+      this.player.x = Math.floor(centerGridX) * this.GRID_RESOLUTION + (this.GRID_RESOLUTION - this.PLAYER_SIZE) / 2;
+      this.player.y = Math.floor(centerGridY) * this.GRID_RESOLUTION + (this.GRID_RESOLUTION - this.PLAYER_SIZE) / 2;
+    }
 
-
+    // si tu stockes spawn en coordonnées de grille, tu pourrais recalculer jsonPlayerSpawn ici.
+  },
 
   run() {
     this.lastTime = performance.now();
@@ -140,6 +150,8 @@ onResize() {
           this.jumpDown = true;
           this.player.setvy(this.PLAYER_JUMP_SPEED);
           this.coyoteTime = 0;
+          // ✅ utilise la closure
+          console.log(`Nombre de sauts : ${this.jumpCounter()}`);
         }
         break;
       case this.controls.right:
@@ -220,28 +232,25 @@ onResize() {
   },
 
   animate() {
-  const now = performance.now();
-  let timeStep = (now - this.lastTime) / 1000;
-  if (timeStep > 0.1) timeStep = 0.1;
-  this.lastTime = now;
+    const now = performance.now();
+    let timeStep = (now - this.lastTime) / 1000;
+    if (timeStep > 0.1) timeStep = 0.1;
+    this.lastTime = now;
 
-  this.movePlayer(timeStep);
-  this.grid.update(timeStep);
-  this.render(timeStep);
+    this.movePlayer(timeStep);
+    this.grid.update(timeStep);
+    this.render(timeStep);
 
-  
     // --- Animation du sprite seulement quand le joueur bouge ---
-  if ((this.leftDown || this.rightDown) && (!this.lastFrameTime || now - this.lastFrameTime > 100)) {
-    this.grid.currentFrame = (this.grid.currentFrame + 1) % this.grid.spritePlayerCols;
-    this.lastFrameTime = now;
-  } else if (!this.leftDown && !this.rightDown) {
-    this.grid.currentFrame = 0; // frame idle
-  }
+    if ((this.leftDown || this.rightDown) && (!this.lastFrameTime || now - this.lastFrameTime > 100)) {
+      this.grid.currentFrame = (this.grid.currentFrame + 1) % this.grid.spritePlayerCols;
+      this.lastFrameTime = now;
+    } else if (!this.leftDown && !this.rightDown) {
+      this.grid.currentFrame = 0; // frame idle
+    }
 
-
-  requestAnimationFrame(this.animate.bind(this));
-},
-
+    requestAnimationFrame(this.animate.bind(this));
+  },
 
   movePlayer(timeStep) {
 
@@ -300,40 +309,35 @@ onResize() {
     var canvas = this.getCanvas();
     var context = canvas.getContext("2d");
 
-    // context.clearRect(0, 0, canvas.width, canvas.height);
-    // context.fillStyle = "white";
-    // context.beginPath();
-    // context.rect(0, 0, canvas.width, canvas.height);
-    // context.fill();
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-if (this.backgroundImage.complete) {
-  const img = this.backgroundImage;
-  const canvasRatio = canvas.width / canvas.height;
-  const imgRatio = img.width / img.height;
+    if (this.backgroundImage.complete) {
+      const img = this.backgroundImage;
+      const canvasRatio = canvas.width / canvas.height;
+      const imgRatio = img.width / img.height;
 
-  let drawWidth, drawHeight, offsetX, offsetY;
+      let drawWidth, drawHeight, offsetX, offsetY;
 
-  if (canvasRatio > imgRatio) {
-    // Le canvas est plus large → on ajuste sur la largeur
-    drawWidth = canvas.width;
-    drawHeight = canvas.width / imgRatio;
-    offsetX = 0;
-    offsetY = (canvas.height - drawHeight) / 2;
-  } else {
-    // Le canvas est plus haut → on ajuste sur la hauteur
-    drawHeight = canvas.height;
-    drawWidth = canvas.height * imgRatio;
-    offsetX = (canvas.width - drawWidth) / 2;
-    offsetY = 0;
-  }
+      if (canvasRatio > imgRatio) {
+        // Le canvas est plus large → on ajuste sur la largeur
+        drawWidth = canvas.width;
+        drawHeight = canvas.width / imgRatio;
+        offsetX = 0;
+        offsetY = (canvas.height - drawHeight) / 2;
+      } else {
+        // Le canvas est plus haut → on ajuste sur la hauteur
+        drawHeight = canvas.height;
+        drawWidth = canvas.height * imgRatio;
+        offsetX = (canvas.width - drawWidth) / 2;
+        offsetY = 0;
+      }
 
-  context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-} else {
-  // Fallback si l’image n’est pas encore chargée
-  context.fillStyle = "black";
-  context.fillRect(0, 0, canvas.width, canvas.height);
-}
+      context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+    } else {
+      // Fallback si l’image n’est pas encore chargée
+      context.fillStyle = "black";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+    }
 
     this.grid.draw(context, this.isEditor);
 
@@ -389,7 +393,7 @@ Game.prototype.loadNextLevel = function () {
       const editor = new LevelEditor(this);
       editor.loadLayout(JSON.stringify(layout));
       console.log(`✅ Niveau ${this.currentLevel} chargé !`);
-       this.levelCompleted = false; 
+      this.levelCompleted = false; 
     })
     .catch(err => {
       alert("🎉 Bravo, tu as fini tous les niveaux !");

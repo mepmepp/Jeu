@@ -4,14 +4,7 @@
     <title>Platformer physics</title>
     <link rel="stylesheet" type="text/css" href="css/render.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/platformer.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/editor.js"></script>
-    <script src="js/save.js"></script>
-    <script src="js/front.js" defer></script>
-    <script src="js/levelloader.js" defer></script>
-    <script src="js/characterSprite.js"></script>
-    <script type="module" src="js/audio.mjs" defer></script>
+
 </head>
 
 <body>
@@ -26,7 +19,11 @@
         <canvas id="renderer"></canvas>
         <div id="player-sprite"></div>
     </div>
-    <script>
+    <script src="js/platformer.js"></script>
+    <script src="js/levelloader.js" ></script>
+    <script src="js/editor.js"></script>
+    <script src="js/game.js"></script>
+<script>
         const game = new Game();
         const editor = new LevelEditor(game);
         game.run();
@@ -34,6 +31,11 @@
         playerSprite.src = "sprites/images/owlet/walk6.png"; // chemin vers ton image
         game.grid.spritePlayer = playerSprite;
     </script>
-
-
+    
+    
+    <script src="js/front.js" defer></script>
+    <script src="js/characterSprite.js"></script>
+    <script type="module" src="js/audio.mjs" defer></script>
+    
+    <script src="js/save.js"></script>
 </body>

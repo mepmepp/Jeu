@@ -1,80 +1,109 @@
-// game.ts
-import { PlatformerGrid, PlatformerNode } from "./platformer";
-import { LevelEditor } from "./editor";
-
-export class Game {
-  grid: PlatformerGrid;
-  player: PlatformerNode;
+class Game {
   isEditor: boolean;
+  mouseX = 0; mouseY = 0;
+  gridX = -1; gridY = -1;
+  gridWall = true;
 
-  jumpDown: boolean = false;
-  leftDown: boolean = false;
-  rightDown: boolean = false;
-
-  coyoteTime: number = 0;
-  COYOTE_TIME_MAX: number = 0.3;
+  jumpDown = false;
+  leftDown = false;
+  rightDown = false;
 
   jsonPlayerSpawn: { x: number; y: number };
-  levelCompleted: boolean = false;
-  currentLevel: number = 1;
 
-  backgroundImage: HTMLImageElement = new Image();
+  COLUMNS = 40;
+  ROWS = 20;
+  coyoteTime = 0;
+  COYOTE_TIME_MAX = 0.3;
 
-  GRID_RESOLUTION: number = 32;
-  PLAYER_SIZE: number = 24;
-  PLAYER_JUMP_SPEED: number = -650;
-  PLAYER_WALK_SPEED: number = 270;
-  PLAYER_WALK_ACCELERATION: number = 3500;
+  backgroundImage: HTMLImageElement;
+  levelCompleted = false;
 
-  controls: { [action: string]: string } = {
-    jump: "KeyW",
-    left: "KeyA",
-    right: "KeyD",
-  };
+  lastTime = performance.now();
+  lastFrameTime?: number;
 
-  lastTime: number = 0;
+  GRID_RESOLUTION = 32;
+  PLAYER_SIZE = 24;
+  PAINT_STROKE_STYLE = "lime";
+  ERASE_STROKE_STYLE = "red";
+  PLAYER_JUMP_SPEED = -650;
+  PLAYER_WALK_SPEED = 270;
+  PLAYER_WALK_ACCELERATION = 3500;
+  PLAYER_SPAWN_X = 100;
+  PLAYER_SPAWN_Y = 100;
 
-  // Coordonnées pour l'éditeur
-  mouseX: number = 0;
-  mouseY: number = 0;
-  gridX: number = -1;
-  gridY: number = -1;
-  gridWall: boolean = true;
+  controls = { jump: "KeyW", left: "KeyA", right: "KeyD" };
 
-  constructor(isEditor: boolean = false) {
+  grid: PlatformerGrid;
+  player: PlatformerNode;
+
+  // closure compteur de sauts
+  private jumpCounterFn: () => number;
+
+  constructor(isEditor = false) {
     this.isEditor = isEditor;
 
+    // closure
+    const createCounter = () => {
+      let count = 0;
+      return () => ++count;
+    };
+    this.jumpCounterFn = createCounter();
+
+    this.backgroundImage = new Image();
     this.backgroundImage.src = "../sprites/images/cave.jpg";
 
-    // Création de la grille
-    this.grid = new PlatformerGrid(40, 20, this.GRID_RESOLUTION);
-    this.grid.game = this;
+    this.getCanvas();
 
-    // Création du joueur
-    this.PLAYER_SIZE = Math.round(this.PLAYER_SIZE * (this.GRID_RESOLUTION / 32));
-    this.PLAYER_JUMP_SPEED *= this.GRID_RESOLUTION / 32;
-    this.PLAYER_WALK_SPEED *= this.GRID_RESOLUTION / 32;
-    this.PLAYER_WALK_ACCELERATION *= this.GRID_RESOLUTION / 32;
+    // scale en fonction de la résolution dynamique
+    this.PLAYER_SIZE = Math.round(Game.prototype.PLAYER_SIZE * (this.GRID_RESOLUTION / 32));
+    this.PLAYER_JUMP_SPEED = Game.prototype.PLAYER_JUMP_SPEED * (this.GRID_RESOLUTION / 32);
+    this.PLAYER_WALK_SPEED = Game.prototype.PLAYER_WALK_SPEED * (this.GRID_RESOLUTION / 32);
+    this.PLAYER_WALK_ACCELERATION = Game.prototype.PLAYER_WALK_ACCELERATION * (this.GRID_RESOLUTION / 32);
 
-    this.player = new PlatformerNode(100, 100, this.PLAYER_SIZE, this.PLAYER_SIZE);
+    this.grid = new PlatformerGrid(this.COLUMNS, this.ROWS, this.GRID_RESOLUTION);
+    (this.grid as any).game = this;
+
+    for (let x = 0; x < this.grid.width; ++x)
+      this.grid.setCeiling(x, this.grid.height - 1, true);
+
+    this.jsonPlayerSpawn = { x: this.PLAYER_SPAWN_X, y: this.PLAYER_SPAWN_Y };
+    this.player = new PlatformerNode(this.jsonPlayerSpawn.x, this.jsonPlayerSpawn.y, this.PLAYER_SIZE, this.PLAYER_SIZE);
     this.grid.addNode(this.player);
-
-    this.jsonPlayerSpawn = { x: this.player.x, y: this.player.y };
 
     this.addListeners();
 
-    if (!this.isEditor) this.loadLevel("json/level1.json");
+    // Chargement du niveau par défaut si jeu
+    if (!this.isEditor) {
+      fetch("json/level1.json")
+        .then(res => res.json())
+        .then(layout => {
+          const editor = new LevelEditor(this);
+          editor.loadLayout(JSON.stringify(layout));
+        })
+        .catch(err => console.error("❌ Erreur chargement niveau :", err));
+    }
+  }
+
+  addListeners(): void {
+    if (this.isEditor) {
+      this.getCanvas().addEventListener("click", this.mouseClick.bind(this));
+      this.getCanvas().addEventListener("mousemove", this.mouseMove.bind(this));
+      this.getCanvas().addEventListener("mouseout", this.mouseLeave.bind(this));
+    }
+    window.addEventListener("keydown", this.keyDown.bind(this));
+    window.addEventListener("keyup", this.keyUp.bind(this));
+    window.addEventListener("resize", this.onResize.bind(this));
   }
 
   getCanvas(): HTMLCanvasElement {
     const canvas = document.getElementById("renderer") as HTMLCanvasElement;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    this.GRID_RESOLUTION = Math.floor(Math.min(canvas.width / 40, canvas.height / 20));
+    this.GRID_RESOLUTION = Math.floor(Math.min(canvas.width / this.COLUMNS, canvas.height / this.ROWS));
     return canvas;
   }
 
-  onResize() {
+  onResize(): void {
     const canvas = this.getCanvas();
     if (this.grid) this.grid.resolution = this.GRID_RESOLUTION;
 
@@ -82,84 +111,69 @@ export class Game {
       const centerGridX = (this.player.x + this.player.width / 2) / this.GRID_RESOLUTION;
       const centerGridY = (this.player.y + this.player.height / 2) / this.GRID_RESOLUTION;
 
-      this.PLAYER_SIZE = Math.round(24 * (this.GRID_RESOLUTION / 32));
+      this.PLAYER_SIZE = Math.round(Game.prototype.PLAYER_SIZE * (this.GRID_RESOLUTION / 32));
       this.player.width = this.player.height = this.PLAYER_SIZE;
       this.player.x = Math.floor(centerGridX) * this.GRID_RESOLUTION + (this.GRID_RESOLUTION - this.PLAYER_SIZE) / 2;
       this.player.y = Math.floor(centerGridY) * this.GRID_RESOLUTION + (this.GRID_RESOLUTION - this.PLAYER_SIZE) / 2;
     }
   }
 
-  addListeners() {
-    if (this.isEditor) {
-      this.getCanvas().addEventListener("click", this.mouseClick.bind(this));
-      this.getCanvas().addEventListener("mousemove", this.mouseMove.bind(this));
-      this.getCanvas().addEventListener("mouseout", this.mouseLeave.bind(this));
-    }
-
-    window.addEventListener("keydown", this.keyDown.bind(this));
-    window.addEventListener("keyup", this.keyUp.bind(this));
-    window.addEventListener("resize", this.onResize.bind(this));
+  run(): void {
+    this.lastTime = performance.now();
+    window.requestAnimationFrame(this.animate.bind(this));
   }
 
-  keyDown(e: KeyboardEvent) {
+  keyDown(e: KeyboardEvent): void {
     switch (e.code) {
       case this.controls.jump:
         if (!this.jumpDown && (this.player.onGround || this.coyoteTime > 0)) {
           this.jumpDown = true;
           this.player.setvy(this.PLAYER_JUMP_SPEED);
           this.coyoteTime = 0;
+          console.log(`Nombre de sauts : ${this.jumpCounterFn()}`);
         }
         break;
-      case this.controls.right:
-        this.rightDown = true;
-        break;
-      case this.controls.left:
-        this.leftDown = true;
-        break;
-      case "Space":
-        this.toggleDimension();
-        break;
+      case this.controls.right: this.rightDown = true; break;
+      case this.controls.left: this.leftDown = true; break;
+      case "Space": this.toggleDimension(); break;
       case "KeyG":
         if (this.isEditor && this.gridX !== -1 && this.gridY !== -1) {
           const cell = this.grid.getCell(this.gridX, this.gridY);
-          cell.goal = !cell.goal;
+          this.grid.setGoal(this.gridX, this.gridY, !cell.goal);
         }
         break;
     }
   }
 
-  keyUp(e: KeyboardEvent) {
+  keyUp(e: KeyboardEvent): void {
     switch (e.code) {
-      case this.controls.jump:
-        this.jumpDown = false;
-        break;
-      case this.controls.right:
-        this.rightDown = false;
-        break;
-      case this.controls.left:
-        this.leftDown = false;
-        break;
+      case this.controls.jump: this.jumpDown = false; break;
+      case this.controls.right: this.rightDown = false; break;
+      case this.controls.left: this.leftDown = false; break;
     }
   }
 
-  mouseClick(e: MouseEvent) {
-    if (!this.isEditor || this.gridX === -1 || this.gridY === -1) return;
-    if (this.gridWall) this.grid.setWall(this.gridX, this.gridY, !this.grid.getWall(this.gridX, this.gridY));
-    else this.grid.setCeiling(this.gridX, this.gridY, !this.grid.getCeiling(this.gridX, this.gridY));
+  mouseClick(_e: MouseEvent): void {
+    if (!this.isEditor) return;
+    if (this.gridX === -1 || this.gridY === -1) return;
+
+    if (this.gridWall)
+      this.grid.setWall(this.gridX, this.gridY, !this.grid.getWall(this.gridX, this.gridY));
+    else
+      this.grid.setCeiling(this.gridX, this.gridY, !this.grid.getCeiling(this.gridX, this.gridY));
   }
 
-  mouseMove(e: MouseEvent) {
+  mouseMove(e: MouseEvent): void {
     if (!this.isEditor) return;
     const bounds = this.getCanvas().getBoundingClientRect();
     this.mouseX = e.clientX - bounds.left;
     this.mouseY = e.clientY - bounds.top;
     this.gridX = Math.floor(this.mouseX / this.GRID_RESOLUTION);
     this.gridY = Math.floor(this.mouseY / this.GRID_RESOLUTION);
-
     this.findSelectedEdge();
   }
 
-  findSelectedEdge() {
+  findSelectedEdge(): void {
     const deltaX = this.mouseX - this.gridX * this.GRID_RESOLUTION;
     const deltaY = this.mouseY - this.gridY * this.GRID_RESOLUTION;
     this.gridWall = deltaX * deltaX < deltaY * deltaY;
@@ -171,16 +185,11 @@ export class Game {
     }
   }
 
-  mouseLeave(e: MouseEvent) {
+  mouseLeave(_e: MouseEvent): void {
     this.gridX = this.gridY = -1;
   }
 
-  run() {
-    this.lastTime = performance.now();
-    requestAnimationFrame(this.animate.bind(this));
-  }
-
-  animate() {
+  animate(): void {
     const now = performance.now();
     let timeStep = (now - this.lastTime) / 1000;
     if (timeStep > 0.1) timeStep = 0.1;
@@ -190,12 +199,45 @@ export class Game {
     this.grid.update(timeStep);
     this.render(timeStep);
 
+    if ((this.leftDown || this.rightDown) && (!this.lastFrameTime || now - this.lastFrameTime > 100)) {
+      this.grid.currentFrame = (this.grid.currentFrame + 1) % this.grid.spritePlayerCols;
+      this.lastFrameTime = now;
+    } else if (!this.leftDown && !this.rightDown) {
+      this.grid.currentFrame = 0;
+    }
+
     requestAnimationFrame(this.animate.bind(this));
   }
 
-  movePlayer(timeStep: number) {
-    if (this.rightDown) this.player.setvx(Math.min(this.player.vx + this.PLAYER_WALK_ACCELERATION * timeStep, this.PLAYER_WALK_SPEED));
-    if (this.leftDown) this.player.setvx(Math.max(this.player.vx - this.PLAYER_WALK_ACCELERATION * timeStep, -this.PLAYER_WALK_SPEED));
+  movePlayer(timeStep: number): void {
+    const playerX = this.player.x;
+    const playerY = this.player.y;
+    document.documentElement.style.setProperty('--player-x', `${playerX}px`);
+    document.documentElement.style.setProperty('--player-y', `${playerY}px`);
+    console.log(`x: ${playerX}; y: ${playerY}`);
+
+    if (this.rightDown) {
+      this.player.setvx(Math.min(this.player.vx + this.PLAYER_WALK_ACCELERATION * timeStep, this.PLAYER_WALK_SPEED));
+    }
+    if (this.leftDown) {
+      this.player.setvx(Math.max(this.player.vx - this.PLAYER_WALK_ACCELERATION * timeStep, -this.PLAYER_WALK_SPEED));
+    }
+
+    if (
+      this.player.x < -this.player.width ||
+      this.player.y < -this.player.height ||
+      this.player.x > this.getCanvas().width ||
+      this.player.y > this.getCanvas().height
+    ) {
+      if (this.jsonPlayerSpawn) {
+        this.player.x = this.jsonPlayerSpawn.x;
+        this.player.y = this.jsonPlayerSpawn.y;
+      } else {
+        this.player.x = this.PLAYER_SPAWN_X;
+        this.player.y = this.PLAYER_SPAWN_Y;
+      }
+      this.player.vx = 0; this.player.vy = 0; this.player.onGround = false;
+    }
 
     if (!this.leftDown && !this.rightDown) {
       const friction = 1000 * (this.GRID_RESOLUTION / 32) * timeStep;
@@ -207,7 +249,7 @@ export class Game {
     if (this.player.onGround) this.coyoteTime = this.COYOTE_TIME_MAX;
   }
 
-  render(timeStep: number) {
+  render(_timeStep: number): void {
     const canvas = this.getCanvas();
     const ctx = canvas.getContext("2d")!;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -216,8 +258,8 @@ export class Game {
       const img = this.backgroundImage;
       const canvasRatio = canvas.width / canvas.height;
       const imgRatio = img.width / img.height;
-      let drawWidth: number, drawHeight: number, offsetX: number, offsetY: number;
 
+      let drawWidth: number, drawHeight: number, offsetX: number, offsetY: number;
       if (canvasRatio > imgRatio) {
         drawWidth = canvas.width;
         drawHeight = canvas.width / imgRatio;
@@ -239,35 +281,37 @@ export class Game {
 
     if (this.isEditor && this.gridX !== -1 && this.gridY !== -1) {
       ctx.beginPath();
-      ctx.lineWidth = this.grid.EDGE_LINE_WIDTH;
+      ctx.lineWidth = PlatformerGrid.prototype.EDGE_LINE_WIDTH;
 
       if (this.gridWall) {
-        ctx.strokeStyle = this.grid.getWall(this.gridX, this.gridY) ? "red" : "lime";
+        ctx.strokeStyle = this.grid.getWall(this.gridX, this.gridY) ? this.ERASE_STROKE_STYLE : this.PAINT_STROKE_STYLE;
         ctx.moveTo(this.gridX * this.GRID_RESOLUTION, this.gridY * this.GRID_RESOLUTION);
         ctx.lineTo(this.gridX * this.GRID_RESOLUTION, (this.gridY + 1) * this.GRID_RESOLUTION);
       } else {
-        ctx.strokeStyle = this.grid.getCeiling(this.gridX, this.gridY) ? "red" : "lime";
+        ctx.strokeStyle = this.grid.getCeiling(this.gridX, this.gridY) ? this.ERASE_STROKE_STYLE : this.PAINT_STROKE_STYLE;
         ctx.moveTo(this.gridX * this.GRID_RESOLUTION, this.gridY * this.GRID_RESOLUTION);
         ctx.lineTo((this.gridX + 1) * this.GRID_RESOLUTION, this.gridY * this.GRID_RESOLUTION);
       }
-
       ctx.stroke();
     }
   }
 
-  setControl(action: string, newKeyCode: string) {
-    if (this.controls[action] !== undefined) this.controls[action] = newKeyCode;
+  setControl(action: keyof Game["controls"], newKeyCode: string): void {
+    if ((this.controls as any)[action] !== undefined) {
+      (this.controls as any)[action] = newKeyCode;
+    }
   }
 
-  toggleDimension() {
+  toggleDimension(): void {
     this.grid.dimension = 1 - this.grid.dimension;
     this.player.onGround = false;
     this.grid.update(0);
   }
 
-  loadNextLevel() {
-    this.currentLevel++;
-    const nextLevelPath = `json/level${this.currentLevel}.json`;
+  loadNextLevel(): void {
+    (this as any).currentLevel = ((this as any).currentLevel || 1) + 1;
+    const nextLevelPath = `json/level${(this as any).currentLevel}.json`;
+
     fetch(nextLevelPath)
       .then(res => {
         if (!res.ok) throw new Error("Niveau suivant introuvable");
@@ -276,18 +320,11 @@ export class Game {
       .then(layout => {
         const editor = new LevelEditor(this);
         editor.loadLayout(JSON.stringify(layout));
+        console.log(`✅ Niveau ${(this as any).currentLevel} chargé !`);
         this.levelCompleted = false;
-        console.log(`✅ Niveau ${this.currentLevel} chargé !`);
       })
-      .catch(() => alert("🎉 Bravo, tu as fini tous les niveaux !"));
-  }
-
-  private loadLevel(path: string) {
-    fetch(path)
-      .then(res => res.json())
-      .then(layout => {
-        const editor = new LevelEditor(this);
-        editor.loadLayout(JSON.stringify(layout));
+      .catch(_err => {
+        alert("🎉 Bravo, tu as fini tous les niveaux !");
       });
   }
 }

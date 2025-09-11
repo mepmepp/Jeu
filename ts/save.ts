@@ -1,53 +1,51 @@
-// editorMenu.ts
-import { LevelEditor } from "./editor";
-
-declare const editor: LevelEditor; // L'éditeur doit être initialisé ailleurs
-
 window.addEventListener("DOMContentLoaded", () => {
-  if (typeof editor === "undefined") return;
+  const checkGame = setInterval(() => {
+    // On vérifie que game et editor sont bien disponibles en global
+    const w = window as any;
+    if (w.game && w.editor) {
+      clearInterval(checkGame);
 
-  const menu = document.createElement("div");
-  menu.id = "menu";
-  menu.style.position = "fixed";
-  menu.style.top = "10px";
-  menu.style.left = "10px";
-  menu.style.zIndex = "10";
-  menu.style.background = "white";
-  menu.style.padding = "8px";
-  menu.style.borderRadius = "6px";
-  menu.style.boxShadow = "0 0 5px rgba(0,0,0,0.3)";
+      if (!w.game.isEditor) return;
 
-  menu.innerHTML = `
-    <button id="saveBtn">💾 Save</button>
-    <button id="exportBtn">⬇️ Export</button>
-    <input type="file" id="importFile" accept=".json" style="display:none;">
-    <button id="loadBtn">📂 Load</button>
-  `;
+      const menu = document.createElement("div");
+      menu.id = "menu";
+      Object.assign(menu.style, {
+        position: "fixed",
+        top: "10px",
+        left: "10px",
+        zIndex: "10",
+        background: "white",
+        padding: "8px",
+        borderRadius: "6px",
+        boxShadow: "0 0 5px rgba(0,0,0,0.3)"
+      } as CSSStyleDeclaration);
 
-  document.body.appendChild(menu);
+      menu.innerHTML = `
+        <button id="saveBtn">💾 Save</button>
+        <button id="exportBtn">⬇️ Export</button>
+        <input type="file" id="importFile" accept=".json" style="display:none;">
+        <button id="loadBtn">📂 Load</button>
+      `;
+      document.body.appendChild(menu);
 
-  const saveBtn = document.getElementById("saveBtn") as HTMLButtonElement;
-  const exportBtn = document.getElementById("exportBtn") as HTMLButtonElement;
-  const loadBtn = document.getElementById("loadBtn") as HTMLButtonElement;
-  const importFile = document.getElementById("importFile") as HTMLInputElement;
+      (document.getElementById("saveBtn") as HTMLButtonElement).addEventListener("click", () => {
+        console.log(w.editor?.saveLayout()); // optional chaining
+        alert("Layout sauvegardé (voir console).");
+      });
 
-  saveBtn.addEventListener("click", () => {
-    console.log(editor.saveLayout());
-    alert("Layout sauvegardé (voir console).");
-  });
+      (document.getElementById("exportBtn") as HTMLButtonElement).addEventListener("click", () => {
+        w.editor?.exportLayout();
+      });
 
-  exportBtn.addEventListener("click", () => {
-    editor.exportLayout();
-  });
+      (document.getElementById("loadBtn") as HTMLButtonElement).addEventListener("click", () => {
+        (document.getElementById("importFile") as HTMLInputElement).click();
+      });
 
-  loadBtn.addEventListener("click", () => {
-    importFile.click();
-  });
-
-  importFile.addEventListener("change", (e: Event) => {
-    const target = e.target as HTMLInputElement;
-    if (target.files && target.files[0]) {
-      editor.importLayout(target.files[0]);
+      (document.getElementById("importFile") as HTMLInputElement).addEventListener("change", (e: Event) => {
+        const input = e.target as HTMLInputElement;
+        const file = input.files?.[0] ?? null; // union + optionnel
+        if (file) w.editor?.importLayout(file);
+      });
     }
-  });
+  }, 100);
 });

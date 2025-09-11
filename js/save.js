@@ -1,46 +1,53 @@
 window.addEventListener("DOMContentLoaded", () => {
-  if (typeof game === "undefined" || !game.isEditor) {
-    // Si le jeu n'existe pas ou qu'on n'est pas en mode éditeur, ne rien faire
-    return;
-  }
+  const checkGame = setInterval(() => {
+    try {
+      if (window.game && window.editor) { // 👈 test sur window
+        clearInterval(checkGame);
 
-  const menu = document.createElement("div");
-  menu.id = "menu";
-  menu.style.position = "fixed";
-  menu.style.top = "10px";
-  menu.style.left = "10px";
-  menu.style.zIndex = "10";
-  menu.style.background = "white";
-  menu.style.padding = "8px";
-  menu.style.borderRadius = "6px";
-  menu.style.boxShadow = "0 0 5px rgba(0,0,0,0.3)";
+        if (!game.isEditor) return;
 
-  menu.innerHTML = `
-    <button id="saveBtn">💾 Save</button>
-    <button id="exportBtn">⬇️ Export</button>
-    <input type="file" id="importFile" accept=".json" style="display:none;">
-    <button id="loadBtn">📂 Load</button>
-  `;
+        const menu = document.createElement("div");
+        menu.id = "menu";
+        menu.style.position = "fixed";
+        menu.style.top = "10px";
+        menu.style.left = "10px";
+        menu.style.zIndex = "10";
+        menu.style.background = "white";
+        menu.style.padding = "8px";
+        menu.style.borderRadius = "6px";
+        menu.style.boxShadow = "0 0 5px rgba(0,0,0,0.3)";
 
-  document.body.appendChild(menu);
+        menu.innerHTML = `
+          <button id="saveBtn">💾 Save</button>
+          <button id="exportBtn">⬇️ Export</button>
+          <input type="file" id="importFile" accept=".json" style="display:none;">
+          <button id="loadBtn">📂 Load</button>
+        `;
 
-  document.getElementById("saveBtn").addEventListener("click", () => {
-    console.log(editor.saveLayout());
-    alert("Layout sauvegardé (voir console).");
-  });
+        document.body.appendChild(menu);
 
-  document.getElementById("exportBtn").addEventListener("click", () => {
-    editor.exportLayout();
-  });
+        document.getElementById("saveBtn").addEventListener("click", () => {
+          console.log(editor.saveLayout());
+          alert("Layout sauvegardé (voir console).");
+        });
 
-  document.getElementById("loadBtn").addEventListener("click", () => {
-    document.getElementById("importFile").click();
-  });
+        document.getElementById("exportBtn").addEventListener("click", () => {
+          editor.exportLayout();
+        });
 
-  document.getElementById("importFile").addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      editor.importLayout(file);
+        document.getElementById("loadBtn").addEventListener("click", () => {
+          document.getElementById("importFile").click();
+        });
+
+        document.getElementById("importFile").addEventListener("change", (e) => {
+          const file = e.target.files[0];
+          if (file) {
+            editor.importLayout(file);
+          }
+        });
+      }
+    } catch (err) {
+      console.error("save.js attend game :", err);
     }
-  });
+  }, 100);
 });
