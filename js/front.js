@@ -9,15 +9,17 @@ const gameWrapperChildren = [...gameWrapper.children];
 
 let gameIsRunning = true; // true: game runs / false: game pauses
 
-window.document.body.style.overflow = "hidden";d
+window.document.body.style.overflow = "hidden";
 
 window.addEventListener("keydown", (event) => {
     let keyPressed = event.key;
     switch (keyPressed) {
         case "p": 
             changeGameState();
+            break;
         case "t": 
             goToTuto();
+            break;
     }
 });
 
