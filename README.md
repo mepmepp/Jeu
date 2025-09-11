@@ -141,7 +141,8 @@ Le menu apparaît uniquement si `game.isEditor` est vrai.
 * Éditeur plus complet (sélection de tiles)
 * Effets sonores et musique
 * Intro et outro : possibilité de skip les messages un par un 
-* Commandes clavier pour tous les boutons
+* Accès au tuto sans réinitialisation du jeu
+* Bouton restart et quit game fonctionnels
 
 ---
 
