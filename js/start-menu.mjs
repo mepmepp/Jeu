@@ -38,6 +38,10 @@ window.addEventListener("keydown", (event) => {
     }
 });
 
+startButton.addEventListener("click", () => {
+    startGame();
+})
+
 // function that starts the game (with a few extra steps beforehand)
 export function startGame() {
     let animationTime = buttonAnimation(); // stores time in ms and launches the button animation 
