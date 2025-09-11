@@ -1,4 +1,4 @@
-function Game(isEditor = true) {
+function Game(isEditor = false) {
   this.isEditor = isEditor; // 👈 true = éditeur, false = jeu
   this.mouseX = this.mouseY = 0;
   this.gridX = this.gridY = -1;
