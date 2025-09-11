@@ -39,7 +39,7 @@ window.addEventListener("keydown", (event) => {
 });
 
 // function that starts the game (with a few extra steps beforehand)
-function startGame() {
+export function startGame() {
     let animationTime = buttonAnimation(); // stores time in ms and launches the button animation 
     setTimeout(() => {
         fadeInMusic(introAudio);
@@ -62,6 +62,8 @@ function startGame() {
         }, totalBeforeTime);
     }, animationTime);
 }
+
+window.startGame = startGame;
 
 // function that start the button animation 
 function buttonAnimation() {
