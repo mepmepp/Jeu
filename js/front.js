@@ -9,6 +9,8 @@ const gameWrapperChildren = [...gameWrapper.children];
 
 let gameIsRunning = true; // true: game runs / false: game pauses
 
+window.document.body.style.overflow = "hidden";d
+
 window.addEventListener("keydown", (event) => {
     let keyPressed = event.key;
     switch (keyPressed) {

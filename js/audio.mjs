@@ -75,3 +75,17 @@ export function fadeOutMusic(audio) {
     }, 100);
     console.log(`${audio} volume at ${audio.volume}.`)
 }
+
+// and this one slowly
+export function slowlyFadeOutMusic(audio) {
+    const fadeOut = setInterval(() => {
+        if (audio.volume > 0.03) {
+            audio.volume -= 0.03;
+        } else {
+            audio.volume = 0;
+            audio.pause(); 
+            clearInterval(fadeOut);
+        }
+    }, 100);
+    console.log(`${audio} volume at ${audio.volume}.`)
+}

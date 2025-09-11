@@ -1,11 +1,13 @@
-import { fadeInMusic, fadeOutMusic, startAudio, introAudio, outroAudio, boom, playMusic } from "./audio.mjs";
+import { fadeInMusic, fadeOutMusic, slowlyFadeOutMusic, startAudio, introAudio, outroAudio, boom } from "./audio.mjs";
 
 ////////////////
 // START MENU //
 ////////////////
 
 const startButton = document.getElementById("start-button");
-const body = document.body;
+let startGameRun = false;
+
+window.document.body.style.overflow = "hidden";
 
 const introLore = [
     'You awaken in the dark, the echo of dripping water as your only company.',
@@ -38,17 +40,25 @@ let introTimeouts = []; // pour stocker les setTimeout de l'intro
 
 window.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
-        startButton.classList.add("button-hover");
-        startGame();
-        setTimeout(() => {
-            startButton.classList.remove("button-hover");
-            startButton.style.display = "none";
-        }, buttonAnimation() / 2);
+        if (startGameRun === false) {
+            startButton.classList.add("button-hover");
+            startGame();
+            setTimeout(() => {
+                startButton.classList.remove("button-hover");
+                startButton.style.display = "none";
+            }, buttonAnimation() / 2);
+            startGameRun = true;
+        }
     }
 });
 
-if (window.location.pathname == "/index.html") {
-    startButton.addEventListener("click", () => startGame());
+if (startButton) {
+    startButton.addEventListener("click", () => {
+        if (startGameRun === false) {
+            startGame();
+            startGameRun = true;
+        }
+    });
 }
 
 window.startGame = startGame;
@@ -109,7 +119,7 @@ export function endGame() {
     });
 
     setTimeout(() => {
-        fadeOutMusic(outroAudio);
+        slowlyFadeOutMusic(outroAudio);
     }, totalDelay);
     return totalDelay;
 }
@@ -122,7 +132,10 @@ function buttonAnimation() {
     let transitionTime = 2000;
     startButton.style.transform = "scale(200)";
     startButton.style.opacity = "0";
-    startButton.style.display = "none";
+    startButton.style.pointerEvents = "none";
+    setTimeout(() => {
+        startButton.style.visibility = "hidden";
+    }, transitionTime);
     startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime / 2}ms`;
     fadeOutMusic(startAudio);
     return transitionTime;
