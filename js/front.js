@@ -24,6 +24,8 @@ window.addEventListener("keydown", (event) => {
 });
 
 function changeGameState() {
+    if (!pauseMenu || !gameWrapper) return;
+    
     if (gameIsRunning) {
         pauseMenu.style.opacity = "1";
         pauseMenu.style.pointerEvents = "all";
