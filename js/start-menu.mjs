@@ -15,7 +15,7 @@ const body = document.body;
 const introLore = [
     'You awaken in the dark, the echo of dripping water as your only company.',
     'The stone around you breathes with a strange, suffocating nostalgia, as if it remembers more than you do.',
-    'Your body is heavy, your mind fractured—memories scatter like broken glass.', // pas essentiel
+    'Your body is heavy, your mind fractured — memories scatter like broken glass.', // pas essentiel
     'Then, a whisper slithers through the cavern:',
     '“You don\’t belong here… but you cannot leave.”',
     'The voice feels close, too close, as though the shadows themselves are speaking.',
@@ -42,6 +42,7 @@ window.addEventListener("keydown", (event) => {
 function startGame() {
     let animationTime = buttonAnimation(); // stores time in ms and launches the button animation 
     setTimeout(() => {
+        fadeInMusic(introAudio);
         let introTime = intro(); // stores time in ms and launches the intro
         let totalBeforeTime = introTime + animationTime; // time in ms
         setTimeout(() => {
@@ -50,7 +51,8 @@ function startGame() {
                 .then(() => {
                     setTimeout(() => {
                         window.location.href = "index.html";
-                    }, 2000);
+                        boom.play();
+                    }, 2300);
                 })
                 .catch((error) => {
                     console.log(`Music failed: ${error}`);
@@ -69,17 +71,12 @@ function buttonAnimation() {
     startButton.style.opacity = "0";
     startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime/2}ms`;
     fadeOutMusic(startAudio);
-    fadeInMusic(introAudio);
-    // setTimeout(() => {
-    //     intro();
-    // }, transitionTime);
     return transitionTime;
 }
 
 // function that start the intro 
 // output : time of the intro in ms
 function intro() {
-    fadeInMusic(introAudio);
     // create an #intro div 
     let intro = document.createElement('div');
     intro.id = "intro";
