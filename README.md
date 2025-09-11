@@ -1,6 +1,8 @@
 # Jeu
 
+# Mélissa : 
 # design 
 # platforme
-# interface : 
+# interface 
 # menu start : start/pause 
+# reinitialiser toutes les valeurs lorsque restart
