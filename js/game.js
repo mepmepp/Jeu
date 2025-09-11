@@ -1,4 +1,4 @@
-function Game(isEditor = false) {
+function Game(isEditor = true) {
   this.isEditor = isEditor; // 👈 true = éditeur, false = jeu
   this.mouseX = this.mouseY = 0;
   this.gridX = this.gridY = -1;
@@ -19,18 +19,16 @@ function Game(isEditor = false) {
 
   this.levelCompleted = false;
 
-  var canvas = this.getCanvas();
+  
   this.getCanvas();
 
-  this.PLAYER_JUMP_SPEED = Game.prototype.PLAYER_JUMP_SPEED * (this.GRID_RESOLUTION / 32);
-  this.PLAYER_WALK_SPEED = Game.prototype.PLAYER_WALK_SPEED * (this.GRID_RESOLUTION / 32);
-  this.PLAYER_WALK_ACCELERATION = Game.prototype.PLAYER_WALK_ACCELERATION * (this.GRID_RESOLUTION / 32);
+  this.PLAYER_SIZE = Math.round(Game.prototype.PLAYER_SIZE * (this.GRID_RESOLUTION / 32));
+this.PLAYER_JUMP_SPEED = Game.prototype.PLAYER_JUMP_SPEED * (this.GRID_RESOLUTION / 32);
+this.PLAYER_WALK_SPEED = Game.prototype.PLAYER_WALK_SPEED * (this.GRID_RESOLUTION / 32);
+this.PLAYER_WALK_ACCELERATION = Game.prototype.PLAYER_WALK_ACCELERATION * (this.GRID_RESOLUTION / 32);
 
-  this.grid = new PlatformerGrid(
-    this.COLUMNS,
-    this.ROWS,
-    this.GRID_RESOLUTION
-  );
+  this.grid = new PlatformerGrid(this.COLUMNS, this.ROWS, this.GRID_RESOLUTION);
+
   this.grid.game = this; 
 
   for (var x = 0; x < this.grid.width; ++x)
@@ -84,27 +82,51 @@ Game.prototype = {
       this.getCanvas().addEventListener("mouseout", this.mouseLeave.bind(this));
     }
 
-    window.addEventListener("keydown", this.keyDown.bind(this));
-    window.addEventListener("keyup", this.keyUp.bind(this));
-    window.addEventListener("resize", () => {
-      const canvas = document.getElementById("renderer");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
+     window.addEventListener("keydown", this.keyDown.bind(this));
+  window.addEventListener("keyup", this.keyUp.bind(this));
+  window.addEventListener("resize", this.onResize.bind(this));
   },
 
   getCanvas() {
-    const canvas = document.getElementById("renderer");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  const canvas = document.getElementById("renderer");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-    this.GRID_RESOLUTION = Math.min(
-      canvas.width / this.COLUMNS,
-      canvas.height / this.ROWS
-    );
+  // Garder toujours COLUMNS × ROWS
+  this.GRID_RESOLUTION = Math.floor(Math.min(canvas.width / this.COLUMNS, canvas.height / this.ROWS));
 
-    return canvas;
-  },
+  return canvas;
+}
+,
+onResize() {
+  // recalcule GRID_RESOLUTION et met à jour canvas et grille
+  const canvas = this.getCanvas();
+
+  // Met à jour la résolution de la grille existante (si elle existe)
+  if (this.grid) {
+    this.grid.resolution = this.GRID_RESOLUTION;
+  }
+
+  // Met à jour la taille du joueur (si on souhaite que le joueur suive la nouvelle résolution)
+  // On conserve la position au même indice de case : convertit en coords de grille -> pixels
+  if (this.player) {
+    // calcule le centre du joueur en cases (coordGrille)
+    const centerGridX = (this.player.x + this.player.width / 2) / this.GRID_RESOLUTION;
+    const centerGridY = (this.player.y + this.player.height / 2) / this.GRID_RESOLUTION;
+
+    // rescale PLAYER_SIZE
+    this.PLAYER_SIZE = Math.round(Game.prototype.PLAYER_SIZE * (this.GRID_RESOLUTION / 32));
+
+    // repositionne le joueur centré sur la même case
+    this.player.width = this.player.height = this.PLAYER_SIZE;
+    this.player.x = Math.floor(centerGridX) * this.GRID_RESOLUTION + (this.GRID_RESOLUTION - this.PLAYER_SIZE) / 2;
+    this.player.y = Math.floor(centerGridY) * this.GRID_RESOLUTION + (this.GRID_RESOLUTION - this.PLAYER_SIZE) / 2;
+  }
+
+  // si tu stockes spawn en coordonnées de grille, tu pourrais recalculer jsonPlayerSpawn ici.
+},
+
+
 
   run() {
     this.lastTime = performance.now();
@@ -294,7 +316,7 @@ if (this.backgroundImage.complete) {
   context.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-    this.grid.draw(context);
+    this.grid.draw(context, this.isEditor);
 
     if (this.isEditor && this.gridX != -1 && this.gridY != -1) {
       context.beginPath();
