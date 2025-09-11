@@ -74,8 +74,9 @@ if (window.location.pathname == "/ending.html") {
 // START GAME FUNCTION
 /////////////////////////
 
-export async function startGame() {
-    let animationTime = await buttonAnimation();
+export function startGame() {
+    let animationTime = buttonAnimation() / 2;
+    setTimeout(() => {
         fadeInMusic(introAudio);
         let introTime = intro();
         let totalBeforeTime = introTime + animationTime;
@@ -84,7 +85,8 @@ export async function startGame() {
             boom.play()
                 .then(() => setTimeout(() => window.location.href = "game.html", 2300))
                 .catch(() => setTimeout(() => window.location.href = "game.html", 2000));
-        }, totalBeforeTime);
+        }, totalBeforeTime - 500);
+    }, animationTime);
 }
 
 ///////////////////////
@@ -129,40 +131,40 @@ export function endGame() {
 // BUTTON ANIMATION
 /////////////////////////
 
-// function buttonAnimation() {
-//     const transitionTime = 2000;
-//     startButton.style.transform = "scale(200)";
-//     startButton.style.opacity = "0";
-//     startButton.style.pointerEvents = "none";
-//     setTimeout(() => {
-//         startButton.style.visibility = "hidden";
-//     }, transitionTime);
-//     startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime / 2}ms`;
-
-//     fadeOutMusic(startAudio);
-//     return transitionTime;
-// }
-
 function buttonAnimation() {
-  return new Promise((resolve) => {
     const transitionTime = 2000;
-    if (startButton) {
-      startButton.style.transform = "scale(200)";
-      startButton.style.opacity = "0";
-      startButton.style.pointerEvents = "none";
-      startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime / 2}ms`;
-
-      setTimeout(() => {
+    startButton.style.transform = "scale(200)";
+    startButton.style.opacity = "0";
+    startButton.style.pointerEvents = "none";
+    setTimeout(() => {
         startButton.style.visibility = "hidden";
-        resolve(transitionTime);
-      }, transitionTime);
-    } else {
-      resolve(transitionTime);
-    }
+    }, transitionTime);
+    startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime / 2}ms`;
 
     fadeOutMusic(startAudio);
-  });
+    return transitionTime;
 }
+
+// function buttonAnimation() {
+//   return new Promise((resolve) => {
+//     const transitionTime = 2000;
+//     if (startButton) {
+//       startButton.style.transform = "scale(200)";
+//       startButton.style.opacity = "0";
+//       startButton.style.pointerEvents = "none";
+//       startButton.style.transition = `transform ${transitionTime}ms ease-in, opacity ${transitionTime / 2}ms`;
+
+//       setTimeout(() => {
+//         startButton.style.visibility = "hidden";
+//         resolve(transitionTime);
+//       }, transitionTime);
+//     } else {
+//       resolve(transitionTime);
+//     }
+
+//     fadeOutMusic(startAudio);
+//   });
+// }
 
 /////////////////////////
 // INTRO FUNCTION
