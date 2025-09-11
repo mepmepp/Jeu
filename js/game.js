@@ -1,5 +1,5 @@
 function Game(isEditor = false) {
-  this.isEditor = isEditor; // 
+  this.isEditor = isEditor; //
   this.mouseX = this.mouseY = 0;
   this.gridX = this.gridY = -1;
   this.gridWall = true;
@@ -220,17 +220,28 @@ onResize() {
   },
 
   animate() {
-    const now = performance.now();
-    let timeStep = (now - this.lastTime) / 1000; 
-    if (timeStep > 0.1) timeStep = 0.1; 
-    this.lastTime = now;
+  const now = performance.now();
+  let timeStep = (now - this.lastTime) / 1000;
+  if (timeStep > 0.1) timeStep = 0.1;
+  this.lastTime = now;
 
-    this.movePlayer(timeStep);
-    this.grid.update(timeStep);
-    this.render(timeStep);
+  this.movePlayer(timeStep);
+  this.grid.update(timeStep);
+  this.render(timeStep);
 
-    window.requestAnimationFrame(this.animate.bind(this));
-  },
+  
+    // --- Animation du sprite seulement quand le joueur bouge ---
+  if ((this.leftDown || this.rightDown) && (!this.lastFrameTime || now - this.lastFrameTime > 100)) {
+    this.grid.currentFrame = (this.grid.currentFrame + 1) % this.grid.spritePlayerCols;
+    this.lastFrameTime = now;
+  } else if (!this.leftDown && !this.rightDown) {
+    this.grid.currentFrame = 0; // frame idle
+  }
+
+
+  requestAnimationFrame(this.animate.bind(this));
+},
+
 
   movePlayer(timeStep) {
 

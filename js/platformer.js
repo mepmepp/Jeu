@@ -105,6 +105,11 @@ function PlatformerGrid(width, height, resolution, gravity = 2500, friction = 80
   this.nodes = [];
   this.dimension = 0;
   this.cells = [];
+  this.spritePlayer = null;
+this.spritePlayerCols = 6; // nombre de colonnes (frames en largeur)
+this.spritePlayerRows = 1; // nombre de lignes (si ton spritesheet est en une seule ligne)
+this.currentFrame = 0;     // frame actuelle
+ // dans le constructeur
 
   for (var i = 0; i < this.width * this.height; ++i)
     this.cells.push(new PlatformerGridCell());
@@ -405,16 +410,58 @@ PlatformerGrid.prototype = {
   }
   ,
 
-  drawNodes(context) {
-    for (var i = 0; i < this.nodes.length; ++i) {
-      const node = this.nodes[i];
+  // Dans PlatformerGrid, ajoute une propriété pour le sprite
 
+
+
+// Puis modifie drawNodes pour utiliser le sprite
+drawNodes(context) {
+  const scale = 1.5; // facteur d’agrandissement
+
+  for (const node of this.nodes) {
+    const drawW = node.width * scale;
+    const drawH = node.height * scale;
+    const offsetX = node.x - (drawW - node.width) / 2;
+   const offsetY = node.y + node.height - drawH;
+
+    if (this.spritePlayer && this.spritePlayer.complete) {
+      const frameWidth = this.spritePlayer.width / this.spritePlayerCols;
+      const frameHeight = this.spritePlayer.height / this.spritePlayerRows;
+      const sx = (this.currentFrame % this.spritePlayerCols) * frameWidth;
+      const sy = Math.floor(this.currentFrame / this.spritePlayerCols) * frameHeight;
+
+      context.save();
+
+      if (node.vx < 0) {
+        // miroir horizontal
+        context.scale(-1, 1);
+        context.drawImage(
+          this.spritePlayer,
+          sx, sy, frameWidth, frameHeight,
+          -(offsetX + drawW), offsetY, // inversion sur X
+          drawW, drawH
+        );
+      } else {
+        // normal
+        context.drawImage(
+          this.spritePlayer,
+          sx, sy, frameWidth, frameHeight,
+          offsetX, offsetY,
+          drawW, drawH
+        );
+      }
+
+      context.restore();
+    } else {
       context.fillStyle = this.PLAYER_FILL_STYLE;
-      context.beginPath();
-      context.rect(node.x, node.y, node.width, node.height);
-      context.fill();
+      context.fillRect(node.x, node.y, node.width, node.height);
     }
-  },
+  }
+},
+
+
+
+
 
   draw(context, isEditor) {
   if (isEditor) {

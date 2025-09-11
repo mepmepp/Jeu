@@ -20,7 +20,7 @@ html, body {
   transform: translate(-50%, -50%); /* centre le canvas */
 }
 
-#player-sprite {
+/* #player-sprite {
   position: absolute;
   width: 32px;
   height: 32px;
@@ -31,4 +31,4 @@ html, body {
   top: var(--player-y);
   z-index: 400;
   transform: translate(-12px, -23px) scale(1.3);
-}
+} */

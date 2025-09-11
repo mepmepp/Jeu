@@ -21,7 +21,7 @@
         <button class="button">Quit Game</button>
     </div>
     <div id="wrapper">
-        
+
 
         <canvas id="renderer"></canvas>
         <div id="player-sprite"></div>
@@ -30,6 +30,9 @@
         const game = new Game();
         const editor = new LevelEditor(game);
         game.run();
+        const playerSprite = new Image();
+        playerSprite.src = "sprites/images/owlet/walk6.png"; // chemin vers ton image
+        game.grid.spritePlayer = playerSprite;
     </script>
 
 
